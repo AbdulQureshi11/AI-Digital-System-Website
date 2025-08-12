@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* This Section is for Adding Font*/
+@font-face {
+  font-family: RobotoSlab-Regular;
+  src: url('../src/Assets/Fonts/RobotoSlab-Regular.ttf')
+}
+
+@theme {
+  --font-Robot: RobotoSlab-Regular, "sans-serif";
+}
+
+/* Slow ping animation */
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  75% {
+    transform: scale(2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Brain dots positions */
+.brain-dot-1 {
+  top: 15vw;
+  left: 8vw;
+}
+
+.brain-dot-2 {
+  top: 18vw;
+  left: 13vw;
+}
+
+.brain-dot-3 {
+  top: 22.5vw;
+  left: 12.6vw;
+}
+
+.brain-dot-4 {
+  top: 30.2vw;
+  left: 18.4vw;
+}
+
+.brain-dot-5 {
+  top: 6.7vw;
+  left: 26vw;
+}
+
+.brain-dot-6 {
+  top: 13.5vw;
+  left: 30vw;
+}
+
+.brain-dot-7 {
+  top: 19.2vw;
+  left: 29vw;
+}
+
+.brain-dot-8 {
+  top: 6vw;
+  left: 15.4vw;
+}
+
+.animate-ping-slow {
+  animation: ping-slow 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.home-banner {
+  height: 100vh;
+  background: linear-gradient(135deg, #171a88 0%, #0f1018 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.sidebar-gradient {
+  background: linear-gradient(135deg, #171a88 0%, #0f1018 100%);
+}
+
+
+/* This styling is for dropdown menu */
+.menu_toggler {
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu_toggler span {
+  background-color: #fff;
+  height: 4px;
+  margin-bottom: 7px;
+  transition-property: width, margin-left, margin-right;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+/* Last span ki margin bottom zero */
+.menu_toggler span:last-child {
+  margin-bottom: 0;
+}
+
+/* Default state */
+.menu_toggler span:nth-child(1) {
+  width: 20px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.menu_toggler span:nth-child(2) {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.menu_toggler span:nth-child(3) {
+  width: 18px;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Active or Hover state */
+.menu_toggler.active span:nth-child(1),
+.menu_toggler:hover span:nth-child(1) {
+  width: 18px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.menu_toggler.active span:nth-child(3),
+.menu_toggler:hover span:nth-child(3) {
+  width: 20px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/*This section of Circle movment*/
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
