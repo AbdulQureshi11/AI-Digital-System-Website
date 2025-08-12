@@ -9,6 +9,9 @@ import Graphicdesiging from './Pages/Sidebar-Pages/Graphicdesiging'
 import Webdesiging from './Pages/Sidebar-Pages/Webdesiging'
 import Webdevelopment from './Pages/Sidebar-Pages/Webdevelopment'
 import Dataanalytics from './Pages/Sidebar-Pages/Dataanalytics'
+import AIML from './Pages/ServicesSection_Pages/AIML'
+import Cybersecurity from './Pages/ServicesSection_Pages/Cybersecurity'
+import LOT from './Pages/ServicesSection_Pages/LOT'
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -21,12 +24,17 @@ const App = () => {
         <Route path='/contactus' element={<Contactus />} />
         <Route path='' element={<Home />} />
 
-        {/*MenuBar */}
+        {/*Page linked in Sidebar & Services */}
         <Route path='/webhosting' element={<Webhosting />} />
         <Route path='/grahpicdesiging' element={<Graphicdesiging />} />
         <Route path='/webdesiging' element={<Webdesiging />} />
         <Route path='/webdevelopment' element={<Webdevelopment />} />
         <Route path='/dataanalytics' element={<Dataanalytics />} />
+
+        {/*Page linked in Services Only */}
+        <Route path='/artificial' element={<AIML />} />
+        <Route path='/cybersecurity' element={<Cybersecurity />} />
+        <Route path='/lot' element={<LOT />} />
       </>
     )
   )
