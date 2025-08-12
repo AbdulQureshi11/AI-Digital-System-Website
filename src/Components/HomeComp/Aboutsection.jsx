@@ -49,16 +49,24 @@ const Aboutsection = () => {
                     </p>
                     {/*Reward Section */}
                     <div className='flex w-[100%] h-[100px] mt-5'>
-                        <div className='w-[50%] h-full flex items-center gap-4'>
+                        <div className='w-[50%] h-full flex items-center gap-7 p-2'>
                             <img src={client}
                                 alt=""
                                 className='w-[30%]'
                             />
                             <h1 className='font-Robot text-[18px] text-[#6F6F6F]'>Client satisfaction is our reward</h1>
-                        </div>
-                        <div className='w-[50%] h-full bg-yellow-500'>
 
                         </div>
+                        <div className='w-[50%] h-full flex items-center gap-7 p-2'>
+                            <img src={time}
+                                alt=""
+                                className='w-[30%]'
+                            />
+                            <h1 className='font-Robot text-[18px] text-[#6F6F6F]'>We always complete tasks on time</h1>
+                        </div>
+                    </div>
+                    <div className='flex items-center  h-[50px] w-[100%] mb-20'>
+                        <button className='border-2 border-[#f15922] text-[#f15922] font-Robot px-15 py-2 mt-9 hover:text-white hover:bg-[#f15922] cursor-pointer transition-all rounded-3xl'>Read More</button>
                     </div>
                 </div>
             </div>
