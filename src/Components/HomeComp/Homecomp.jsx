@@ -8,6 +8,7 @@ import Aboutsection from "./Aboutsection";
 import ServicesSection from "./ServicesSection";
 import Counter from "./Counter";
 import Ourproducts from "./Ourproducts";
+import Ourclients from "./Ourclients";
 
 const brainDotClasses = [
   "brain-dot-1", "brain-dot-2", "brain-dot-3", "brain-dot-4", "brain-dot-5", "brain-dot-6", "brain-dot-7", "brain-dot-8",
@@ -86,6 +87,10 @@ const Homecomp = () => {
       {/*Our Products*/}
       <div>
         <Ourproducts />
+      </div>
+      {/*Our Clients Section*/}
+      <div>
+        <Ourclients />
       </div>
     </div>
   );

@@ -12,6 +12,12 @@ import Dataanalytics from './Pages/Sidebar-Pages/Dataanalytics'
 import AIML from './Pages/ServicesSection_Pages/AIML'
 import Cybersecurity from './Pages/ServicesSection_Pages/Cybersecurity'
 import LOT from './Pages/ServicesSection_Pages/LOT'
+import Travelportal from './Pages/Products_pages/Travelportal'
+import Digitalcampus from './Pages/Products_pages/Digitalcampus'
+import AIpay from './Pages/Products_pages/AIpay'
+import Digitalcommunicate from './Pages/Products_pages/Digitalcommunicate'
+import BotAgent from './Pages/Products_pages/BotAgent'
+
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -35,6 +41,13 @@ const App = () => {
         <Route path='/artificial' element={<AIML />} />
         <Route path='/cybersecurity' element={<Cybersecurity />} />
         <Route path='/lot' element={<LOT />} />
+
+        {/*Our Products Pages Link */}
+        <Route path='/travelportal' element={<Travelportal />} />
+        <Route path='/digitalcampus' element={<Digitalcampus />} />
+        <Route path='/aipay' element={<AIpay />} />
+        <Route path='/digitalcommunicate' element={<Digitalcommunicate />} />
+        <Route path='/botagent' element={<BotAgent />} />
       </>
     )
   )

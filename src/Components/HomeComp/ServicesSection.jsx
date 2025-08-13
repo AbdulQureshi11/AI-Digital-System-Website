@@ -3,7 +3,7 @@ import { servicesitems } from "../../Utlis/Menubar";
 
 const ServicesSection = () => {
     return (
-        <div className="bg-[#F5F4F2] w-full px-10 py-20 font-Robot">
+        <div className="bg-[#F5F4F2] w-full px-19 py-20 font-Robot">
             {/* Heading Section */}
             <div className="flex items-start flex-wrap md:flex-nowrap">
                 <div className="relative w-full md:w-3/5 mb-5">

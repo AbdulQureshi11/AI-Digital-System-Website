@@ -11,6 +11,13 @@ import dataanalyticsimg from '../Assets/Pictures/data_analytics.svg'
 import lotimg from '../Assets/Pictures/internet.svg'
 import aimlimg from '../Assets/Pictures/artificial_intelligence.svg'
 
+//import images for our products section:
+import product1 from '../Assets/Pictures/product1.png'
+import product2 from '../Assets/Pictures/product2.png'
+import product3 from '../Assets/Pictures/product3.png'
+import product4 from '../Assets/Pictures/product4.png'
+import product5 from '../Assets/Pictures/product5.png'
+
 export const webmenu = [
     { id: 1, name: 'Home', path: '/' },
     { id: 2, name: 'About', path: '/about' },
@@ -48,8 +55,18 @@ export const servicesitems = [
 
 //Counter
 export const counterstext = [
-  { target: 100, label: "Domain Registered" },
-  { target: 100, label: "Completed Projects" },
-  { target: 55, label: "Design Made" },
-  { target: 500, label: "Software Develop" },
+    { target: 100, label: "Domain Registered" },
+    { target: 100, label: "Completed Projects" },
+    { target: 55, label: "Design Made" },
+    { target: 500, label: "Software Develop" },
+];
+
+
+//Our Products Page Data
+export const ourproducts = [
+    { id: 1, name: 'Travel Portal', image: product1, path: '/travelportal' },
+    { id: 2, name: 'Digital Campus', image: product2, path: '/digitalcampus' },
+    { id: 3, name: 'AI Pay', image: product3, path: '/aipay' },
+    { id: 4, name: 'Digital Communicate', image: product4, path: '/digitalcommunicate' },
+    { id: 5, name: 'Bot Agent', image: product5, path: '/botagent' },
 ];
