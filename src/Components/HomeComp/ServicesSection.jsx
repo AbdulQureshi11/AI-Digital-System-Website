@@ -7,7 +7,7 @@ const ServicesSection = () => {
             {/* Heading Section */}
             <div className="flex items-start flex-wrap md:flex-nowrap">
                 <div className="relative w-full md:w-3/5 mb-5">
-                    <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black">
+                    <h1 className="relative z-10 text-[#002C8B] text-[45px] font-RobotB font-black">
                         Our Services
                     </h1>
                     <span className="absolute left-0 bottom-1 h-[13px] w-[100px] bg-[#f15922] z-0"></span>

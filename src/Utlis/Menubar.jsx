@@ -1,4 +1,4 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube} from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -38,6 +38,7 @@ export const sidebar_pages = [
     { id: 5, name: 'Data Analytics', path: '/dataanalytics' }
 ]
 
+//Social Account Link for Drop Down
 export const social_links = [
     { id: 1, path: "https://www.facebook.com/aidigisys/", icon: <FaFacebookF /> },
     { id: 2, path: "https://twitter.com", icon: <FaTwitter /> },
@@ -46,6 +47,7 @@ export const social_links = [
     { id: 5, path: "https://youtube.com", icon: <FaYoutube /> },
 ];
 
+//Services Section
 export const servicesitems = [
     { id: 1, name: 'Web Hosting Domain', image: webhostingimg, path: '/webhosting', icon: <FaArrowRight /> },
     { id: 2, name: 'Cyber Security', image: cyberimg, path: '/cybersecurity', icon: <FaArrowRight /> },
@@ -58,29 +60,28 @@ export const servicesitems = [
 
 //Counter
 export const counterstext = [
-    { target: 100, label: "Domain Registered" },
-    { target: 100, label: "Completed Projects" },
-    { target: 55, label: "Design Made" },
-    { target: 500, label: "Software Develop" },
+    { target: 100, label: "DOMAIN REGISTERED" },
+    { target: 55, label: "COMPLETED PROJECTS" },
+    { target: 100, label: "DESIGN MADE" },
+    { target: 500, label: "SOFTWARE DEVELOP" },
 ];
-
 
 //Our Products Page Data
 export const ourproducts = [
-    { id: 1, name: 'Travel Portal', image: product1, path: '/travelportal' },
-    { id: 2, name: 'Digital Campus', image: product2, path: '/digitalcampus' },
-    { id: 3, name: 'AI Pay', image: product3, path: '/aipay' },
-    { id: 4, name: 'Digital Communicate', image: product4, path: '/digitalcommunicate' },
-    { id: 5, name: 'Bot Agent', image: product5, path: '/botagent' },
+    { id: 1, name: 'Travel Portal', dis: 'Travel Portal for travel agencies for want to migrate their traditional business to become OTAs', image: product1, path: '/travelportal' },
+    { id: 2, name: 'Digital Campus', dis: 'student Management System with comprehensive list of features', image: product2, path: '/digitalcampus' },
+    { id: 3, name: 'AI Pay', dis: 'Payment solutions with a taste of AI', image: product3, path: '/aipay' },
+    { id: 4, name: 'Digital Communicate', dis: 'APIs and Tools for communication via SMS, Email & Whatsapp', image: product4, path: '/digitalcommunicate' },
+    { id: 5, name: 'Bot Agent', dis: 'Chat bots on whatsapp, facebook etc', image: product5, path: '/botagent' },
 ];
+
 
 
 //Footer Data
 //Quick Links
 //1: Our Services
-
 export const fourservices = [
-    { id: 1, name: 'Web Hosting Domain', path: '/webhosting' },
+    { id: 1, name: 'Web Hosting & Domain', path: '/webhosting' },
     { id: 2, name: 'Cyber Security', path: '/cybersecurity' },
     { id: 3, name: 'Development (Software, Website & App)', path: '/webdevelopment' },
     { id: 4, name: 'Creative (UI/UX & Graphic)', path: '/grahpicdesiging' },
@@ -88,16 +89,12 @@ export const fourservices = [
     { id: 6, name: 'IoT ', path: '/lot' },
     { id: 7, name: 'AI & ML', path: '/artificial' },
 ]
-
 //2: Quick Links
 //Pickup from webmenu top of the file
-
-
 //3: Our Office
-
 export const ourOfficeMenu = [
     { id: 1, icon: <FaMapLocationDot />, name: 'Suit # TF24 Deans Trade Center Peshawar, Pakistan' },
     { id: 2, icon: <FaMapLocationDot />, name: 'AI Systems Dynamics, 124 City Road, London, U.K, EC1V 2NX' },
-    { id: 3, icon: <FaPhone /> , name: '+92 313 997 4444' },
+    { id: 3, icon: <FaPhone />, name: '+92 313 997 4444' },
     { id: 4, icon: <MdEmail />, name: 'info@aisys.pk' }
 ]

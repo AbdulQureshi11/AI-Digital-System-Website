@@ -29,7 +29,7 @@ const Aboutsection = () => {
 
                 <div className="w-full h-full p-5 flex-col pt-30 ml-28 items-center ">
                     <div className="relative mb-5 inline-block">
-                        <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-Robot">About Us</h1>
+                        <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-RobotB">About Us</h1>
                         <span className="absolute left-0 bottom-3 h-[13px] w-[100px] bg-[#f15922] z-0"></span>
                     </div>
 

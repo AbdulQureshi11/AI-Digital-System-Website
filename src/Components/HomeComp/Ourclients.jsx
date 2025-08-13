@@ -26,7 +26,7 @@ const OurClients = () => {
                 <div className="flex flex-col items-start text-left space-y-4 pl-4">
                     {/* Heading with highlight */}
                     <div className="relative inline-block">
-                        <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-Robot leading-none">
+                        <h1 className="relative z-10 font-RobotB text-[#002C8B] text-[45px] font-black leading-none">
                             Our Clients
                         </h1>
                         <span className="absolute left-0 bottom-0 h-[13px] w-[150px] bg-[#f15922] z-0"></span>
@@ -34,15 +34,13 @@ const OurClients = () => {
 
                     {/* Description */}
                     <p className="text-gray-600 font-Robot leading-relaxed">
-                        Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean
-                        sollicitudin, lorem quis bibendum aucto nisi elit consequat ipsum
-                        nec sagittis sem nibh id elit.
+                       Some of our satisfied customers
                     </p>
 
                     {/* Button */}
                     <Link
                         to="/about"
-                        className="mt-4 inline-block cursor-pointer px-15 py-2 border-2 border-[#f15922] text-[#f15922] font-Robot rounded-3xl hover:text-white hover:bg-[#f15922] transition-all"
+                        className="mt-4 inline-block cursor-pointer px-15 py-2 border border-[#f15922] text-[#f15922] font-Robot rounded-3xl hover:text-white hover:bg-[#f15922] transition-all"
                     >
                         About Us
                     </Link>
