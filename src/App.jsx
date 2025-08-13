@@ -17,11 +17,14 @@ import Digitalcampus from './Pages/Products_pages/Digitalcampus'
 import AIpay from './Pages/Products_pages/AIpay'
 import Digitalcommunicate from './Pages/Products_pages/Digitalcommunicate'
 import BotAgent from './Pages/Products_pages/BotAgent'
+import Navigation from './Pages/Navigation/Navigation'
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <>
+      //Navigation of Footer visible on every page      
+      <Route path='/' element={<Navigation />}>
+
         {/*MenuBar */}
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -48,7 +51,7 @@ const App = () => {
         <Route path='/aipay' element={<AIpay />} />
         <Route path='/digitalcommunicate' element={<Digitalcommunicate />} />
         <Route path='/botagent' element={<BotAgent />} />
-      </>
+      </Route>
     )
   )
   return (
