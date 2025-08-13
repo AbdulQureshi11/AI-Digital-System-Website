@@ -1,5 +1,8 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube} from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
+import { FaMapLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
 
 
 //Import images for services section:
@@ -70,3 +73,31 @@ export const ourproducts = [
     { id: 4, name: 'Digital Communicate', image: product4, path: '/digitalcommunicate' },
     { id: 5, name: 'Bot Agent', image: product5, path: '/botagent' },
 ];
+
+
+//Footer Data
+//Quick Links
+//1: Our Services
+
+export const fourservices = [
+    { id: 1, name: 'Web Hosting Domain', path: '/webhosting' },
+    { id: 2, name: 'Cyber Security', path: '/cybersecurity' },
+    { id: 3, name: 'Development (Software, Website & App)', path: '/webdevelopment' },
+    { id: 4, name: 'Creative (UI/UX & Graphic)', path: '/grahpicdesiging' },
+    { id: 5, name: 'Data Analytics', path: '/dataanalytics' },
+    { id: 6, name: 'IoT ', path: '/lot' },
+    { id: 7, name: 'AI & ML', path: '/artificial' },
+]
+
+//2: Quick Links
+//Pickup from webmenu top of the file
+
+
+//3: Our Office
+
+export const ourOfficeMenu = [
+    { id: 1, icon: <FaMapLocationDot />, name: 'Suit # TF24 Deans Trade Center Peshawar, Pakistan' },
+    { id: 2, icon: <FaMapLocationDot />, name: 'AI Systems Dynamics, 124 City Road, London, U.K, EC1V 2NX' },
+    { id: 3, icon: <FaPhone /> , name: '+92 313 997 4444' },
+    { id: 4, icon: <MdEmail />, name: 'info@aisys.pk' }
+]

@@ -5,10 +5,32 @@
   font-family: RobotoSlab-Regular;
   src: url('../src/Assets/Fonts/RobotoSlab-Regular.ttf')
 }
+@font-face {
+  font-family: RobotoSlab-Bold;
+  src: url('../src/Assets/Fonts/RobotoSlab-Bold.ttf')
+}
+@font-face {
+  font-family: RobotoSlab-ExtraBold;
+  src: url('../src/Assets/Fonts/RobotoSlab-ExtraBold.ttf')
+}
+@font-face {
+  font-family: RobotoSlab-Light;
+  src: url('../src/Assets/Fonts/RobotoSlab-Light.ttf')
+}
+@font-face {
+  font-family: RobotoSlab-Thin;
+  src: url('../src/Assets/Fonts/RobotoSlab-Thin.ttf')
+}
 
 @theme {
   --font-Robot: RobotoSlab-Regular, "sans-serif";
+  --font-RobotB: RobotoSlab-Bold, "sans-serif";
+  --font-RobotEB: RobotoSlab-ExtraBold, "sans-serif";
+  --font-RobotL: RobotoSlab-Light, "sans-serif";
+  --font-RobotT: RobotoSlab-Thin, "sans-serif";
 }
+
+
 
 /* Slow ping animation */
 @keyframes ping-slow {
