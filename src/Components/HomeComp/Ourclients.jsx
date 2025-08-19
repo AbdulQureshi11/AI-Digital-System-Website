@@ -19,6 +19,11 @@ const clients = [
 ];
 
 const OurClients = () => {
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     return (
         <section className="flex w-full px-19 py-20">
             {/* Left Section */}
@@ -34,12 +39,13 @@ const OurClients = () => {
 
                     {/* Description */}
                     <p className="text-gray-600 font-Robot leading-relaxed">
-                       Some of our satisfied customers
+                        Some of our satisfied customers
                     </p>
 
                     {/* Button */}
                     <Link
                         to="/about"
+                        onClick={scrollToTop}
                         className="mt-4 inline-block cursor-pointer px-15 py-2 border border-[#f15922] text-[#f15922] font-Robot rounded-3xl hover:text-white hover:bg-[#f15922] transition-all"
                     >
                         About Us
@@ -57,7 +63,7 @@ const OurClients = () => {
                         <div
                             key={index}
                             className={`flex justify-center items-center h-[180px]
-                ${!isLastRow ? "border-b border-gray-200" : ""}
+                ${!isLastRow ? "border-b border-gray-200" : ""} 
                 ${!isLastCol ? "border-r border-gray-200" : ""}`}
                         >
                             <img src={client.img} alt={client.alt} className="w-[180px] object-contain" />
