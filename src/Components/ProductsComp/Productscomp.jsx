@@ -34,7 +34,7 @@ const Produtcscomp = () => {
       </div>
     </div>
 
-  )
+  ) 
 }
 
 export default Produtcscomp
