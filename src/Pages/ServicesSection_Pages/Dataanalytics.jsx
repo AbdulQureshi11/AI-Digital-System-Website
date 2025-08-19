@@ -1,4 +1,4 @@
-import Dataanalyticscomp from "../../Components/SearchbarPagesComp/DataAnalyticsComp/Dataanalyticscomp"
+import Dataanalyticscomp from "../../Components/ServicesPageComp/DataAnalyticsComp/Dataanalyticscomp"
 
 const Dataanalytics = () => {
   return (

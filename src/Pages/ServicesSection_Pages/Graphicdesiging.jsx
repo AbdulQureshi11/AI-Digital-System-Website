@@ -1,4 +1,4 @@
-import Graphicdescomp from "../../Components/SearchbarPagesComp/GraphicDesigingComp/Graphicdescomp"
+import Graphicdescomp from "../../Components/ServicesPageComp/GraphicDesigingComp/Graphicdescomp"
 
 const Graphicdesiging = () => {
   return (

@@ -2,7 +2,7 @@
 const Inputfield = ({ id, type, name, value, label, onChange, className, placeholder }) => {
     return (
         <div>
-            <label htmlFor="" className='flex mb-1 text-gray-800 text-[18px] font-semibold'>{label}</label>
+            <label htmlFor="" className='flex mb-1 text-gray-800 text-[18px] ml-2 font-Robot'>{label}</label>
             <input
                 type={type}
                 name={name}

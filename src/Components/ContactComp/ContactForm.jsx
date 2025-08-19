@@ -48,10 +48,10 @@ const ContactForm = () => {
         <div className="max-w-4xl mx-auto bg-gradient-to-br from-white to-gray-50 shadow-xl rounded-3xl p-10 border border-gray-100">
             {/* Heading */}
             <div className="text-center mb-10">
-                <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#002C8B] to-[#0041cc]">
+                <h2 className="text-4xl font-RobotB font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#002C8B] to-[#0041cc]">
                     Get in Touch
                 </h2>
-                <p className="text-gray-600 mt-2 text-lg">
+                <p className="text-gray-600 font-Robot mt-2 text-lg">
                     We'd love to hear from you! Fill out the form below.
                 </p>
             </div>
@@ -75,7 +75,7 @@ const ContactForm = () => {
                                         name="name"
                                         value={values.name}
                                         onChange={(e) => setFieldValue("name", e.target.value)}
-                                        className="w-full border border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition"
+                                        className="w-full border font-Robot border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition placeholder:text-opacity-50"
                                         placeholder="Enter your Name"
                                     />
                                     <ErrorMessage
@@ -94,7 +94,7 @@ const ContactForm = () => {
                                         name="email"
                                         value={values.email}
                                         onChange={(e) => setFieldValue("email", e.target.value)}
-                                        className="w-full border border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition"
+                                        className="w-full border font-Robot border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition placeholder:text-opacity-50"
                                         placeholder="Enter your Email"
                                     />
                                     <ErrorMessage
@@ -113,7 +113,7 @@ const ContactForm = () => {
                                         name="phone"
                                         value={values.phone}
                                         onChange={(e) => setFieldValue("phone", e.target.value)}
-                                        className="w-full border border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition"
+                                        className="w-full border font-Robot border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition placeholder:text-opacity-50"
                                         placeholder="Enter your Contact Number"
                                     />
                                     <ErrorMessage
@@ -132,7 +132,7 @@ const ContactForm = () => {
                                         name="subject"
                                         value={values.subject}
                                         onChange={(e) => setFieldValue("subject", e.target.value)}
-                                        className="w-full border border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition"
+                                        className="w-full border font-Robot border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition placeholder:text-opacity-50"
                                         placeholder="Enter your Subject"
                                     />
                                     <ErrorMessage
@@ -147,7 +147,7 @@ const ContactForm = () => {
                             <div>
                                 <label
                                     htmlFor="description"
-                                    className="block mb-2 text-gray-700 font-semibold"
+                                    className="flex mb-1 text-gray-800 ml-2 text-[18px] font-Robot"
                                 >
                                     Message
                                 </label>
@@ -156,10 +156,8 @@ const ContactForm = () => {
                                     id="description"
                                     name="description"
                                     value={values.description}
-                                    onChange={(e) =>
-                                        setFieldValue("description", e.target.value)
-                                    }
-                                    className="w-full border border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition"
+                                    onChange={(e) => setFieldValue("description", e.target.value)}
+                                    className="w-full border font-Robot border-gray-300 rounded-xl px-5 py-3 focus:ring-2 focus:ring-[#0041cc] shadow-sm transition placeholder:text-opacity-50"
                                     placeholder="Write your message here..."
                                 />
                             </div>
@@ -168,7 +166,7 @@ const ContactForm = () => {
                             <div className="text-center">
                                 <Primarybtn
                                     type="submit"
-                                    className="rounded-xl px-8 py-3 cursor-pointer text-lg text-white bg-gradient-to-r from-[#002C8B] to-[#0041cc] hover:opacity-90 transition-all shadow-lg"
+                                    className="rounded-xl px-8 py-3 font-Robot cursor-pointer text-lg text-white bg-gradient-to-r from-[#002C8B] to-[#0041cc] hover:opacity-90 transition-all shadow-lg"
                                 >
                                     Send Message
                                 </Primarybtn>
@@ -181,7 +179,7 @@ const ContactForm = () => {
                                 </p>
                             )}
                             {status === "error" && (
-                                <p className="text-red-600 text-center font-medium mt-4">
+                                <p className="text-red-600  text-center font-medium mt-4">
                                     Something went wrong. Please try again later.
                                 </p>
                             )}

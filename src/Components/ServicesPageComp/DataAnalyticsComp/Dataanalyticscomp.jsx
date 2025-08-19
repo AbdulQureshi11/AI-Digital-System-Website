@@ -1,6 +1,6 @@
 import Header from "../../../Pages/Navigation/Header"
 
-const LOTcomp = () => {
+const Dataanalyticscomp = () => {
     return (
         <div>
             {/* Header Background with Particles */}
@@ -11,4 +11,4 @@ const LOTcomp = () => {
     )
 }
 
-export default LOTcomp
+export default Dataanalyticscomp

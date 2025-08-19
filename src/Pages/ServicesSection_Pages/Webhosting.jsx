@@ -1,4 +1,4 @@
-import Webhositngcomp from "../../Components/SearchbarPagesComp/WebhosingComp/Webhositngcomp"
+import Webhositngcomp from '../../Components/ServicesPageComp/WebhosingComp/Webhositngcomp'
 
 const Webhosting = () => {
   return (

@@ -1,14 +1,15 @@
 import Header from "../../../Pages/Navigation/Header"
 
-const LOTcomp = () => {
+const Webdevcomp = () => {
     return (
         <div>
             {/* Header Background with Particles */}
             <div>
                 <Header />
             </div>
+
         </div>
     )
 }
 
-export default LOTcomp
+export default Webdevcomp

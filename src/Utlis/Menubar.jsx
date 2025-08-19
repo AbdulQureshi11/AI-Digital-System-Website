@@ -32,7 +32,7 @@ export const webmenu = [
 export const sidebar_pages = [
     { id: 1, name: 'Web Hosting', path: '/webhosting' },
     { id: 2, name: 'Graphic Desiging', path: '/grahpicdesiging' },
-    { id: 3, name: 'Web Desiging', path: '/webdesiging' },
+    { id: 3, name: 'AI & ML', path: '/artificial' },
     { id: 4, name: 'Web Development', path: '/webdevelopment' },
     { id: 5, name: 'Data Analytics', path: '/dataanalytics' }
 ]

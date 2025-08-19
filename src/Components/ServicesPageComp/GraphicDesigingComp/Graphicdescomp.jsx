@@ -1,6 +1,6 @@
 import Header from "../../../Pages/Navigation/Header"
 
-const AIMLcomp = () => {
+const Graphicdescomp = () => {
   return (
     <div>
       {/* Header Background with Particles */}
@@ -11,4 +11,4 @@ const AIMLcomp = () => {
   )
 }
 
-export default AIMLcomp
+export default Graphicdescomp

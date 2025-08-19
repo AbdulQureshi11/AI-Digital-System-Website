@@ -1,4 +1,4 @@
-import Webdevcomp from "../../Components/SearchbarPagesComp/WebDevComp/Webdevcomp"
+import Webdevcomp from "../../Components/ServicesPageComp/WebDevComp/Webdevcomp"
 
 const Webdevelopment = () => {
   return (
