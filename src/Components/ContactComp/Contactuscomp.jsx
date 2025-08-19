@@ -21,7 +21,7 @@ const Contactuscomp = () => {
                             <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-RobotB">
                                 Contact Us
                             </h1>
-                            <span className="absolute left-0 bottom-3 h-[13px] w-[150px] bg-[#f15922] z-0"></span>
+                            <span className="absolute left-0 bottom-2 h-[13px] w-[150px] bg-[#f15922] z-0"></span>
                         </div>
 
                         {/* Office Information */}
@@ -32,7 +32,7 @@ const Contactuscomp = () => {
                             </div>
                             <div className="pb-3 border-b font-Robot border-gray-300">
                                 <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                                <p>info@aidigitalsystem.com</p>
+                                <p>info@aisys.pk</p>
                             </div>
                             <div className="pb-3 border-b font-Robot border-gray-300">
                                 <h3 className="text-lg font-semibold text-gray-900">Address</h3>
