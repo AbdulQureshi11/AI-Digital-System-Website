@@ -4,7 +4,6 @@ import { FaMapLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 
-
 //Import images for services section:
 import webhostingimg from '../Assets/Pictures/web_hosting.svg'
 import cyberimg from '../Assets/Pictures/cyber_security.svg'
