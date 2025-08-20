@@ -55,7 +55,7 @@ const Ourproducts = () => {
 
         {/* Second Row - Remaining Three Cards */}
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {ourproducts.slice(2, 5).map((item, idx) => (
+          {ourproducts.slice(2, 20).map((item, idx) => (
             <NavLink
               to={item.path}
               key={idx}
