@@ -1,10 +1,20 @@
+import Aboutsection from "../HomeComp/Aboutsection";
+import Header from "../../Pages/Navigation/Header";
 
 const Aboutcomp = () => {
   return (
     <div>
-      This is About Page
-    </div>
-  )
-}
+      {/* Header Background with Particles */}
+      <div>
+        <Header />
+      </div>
 
-export default Aboutcomp
+      {/*About Us Section */}
+      <div className="bg-[#F5F4F2]">
+        <Aboutsection />
+      </div>
+    </div>
+  );
+};
+
+export default Aboutcomp;

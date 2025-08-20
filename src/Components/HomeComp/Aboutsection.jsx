@@ -29,7 +29,7 @@ const Aboutsection = () => {
 
                 <div className="w-full h-full p-5 flex-col pt-30 ml-28 items-center ">
                     <div className="relative mb-5 inline-block">
-                        <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-Robot">About Us</h1>
+                        <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-RobotB">About Us</h1>
                         <span className="absolute left-0 bottom-3 h-[13px] w-[100px] bg-[#f15922] z-0"></span>
                     </div>
 
@@ -49,16 +49,24 @@ const Aboutsection = () => {
                     </p>
                     {/*Reward Section */}
                     <div className='flex w-[100%] h-[100px] mt-5'>
-                        <div className='w-[50%] h-full flex items-center gap-4'>
+                        <div className='w-[50%] h-full flex items-center gap-7 p-2'>
                             <img src={client}
                                 alt=""
                                 className='w-[30%]'
                             />
                             <h1 className='font-Robot text-[18px] text-[#6F6F6F]'>Client satisfaction is our reward</h1>
-                        </div>
-                        <div className='w-[50%] h-full bg-yellow-500'>
 
                         </div>
+                        <div className='w-[50%] h-full flex items-center gap-7 p-2'>
+                            <img src={time}
+                                alt=""
+                                className='w-[30%]'
+                            />
+                            <h1 className='font-Robot text-[18px] text-[#6F6F6F]'>We always complete tasks on time</h1>
+                        </div>
+                    </div>
+                    <div className='flex items-center  h-[50px] w-[100%] mb-20'>
+                        <button className='border-2 border-[#f15922] text-[#f15922] font-Robot px-15 py-2 mt-9 hover:text-white hover:bg-[#f15922] cursor-pointer transition-all rounded-3xl'>Read More</button>
                     </div>
                 </div>
             </div>

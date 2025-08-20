@@ -5,6 +5,10 @@ import Dropdown from "./Dropdown";
 import brainimg from "../../Assets/Pictures/brain_img.svg";
 import "../../index.css"; // make sure styles are loaded
 import Aboutsection from "./Aboutsection";
+import ServicesSection from "./ServicesSection";
+import Counter from "./Counter";
+import Ourproducts from "./Ourproducts";
+import Ourclients from "./Ourclients";
 
 const brainDotClasses = [
   "brain-dot-1", "brain-dot-2", "brain-dot-3", "brain-dot-4", "brain-dot-5", "brain-dot-6", "brain-dot-7", "brain-dot-8",
@@ -22,6 +26,7 @@ const Homecomp = () => {
             <div className="flex w-[50%] h-[100%]">
               <img src={logo} alt="Logo" className="w-[250px]" />
             </div>
+            {/*Search Button and Drop Down Section */}
             <div className="flex justify-end gap-5 text-[45px] text-white items-center w-[50%] h-[100%]">
               <Searchbtn />
               <Dropdown />
@@ -67,9 +72,25 @@ const Homecomp = () => {
         </div>
       </div>
 
-      {/* Company History */}
+      {/* About Us Section */}
       <div>
         <Aboutsection />
+      </div>
+      {/* Services Section */}
+      <div>
+        <ServicesSection />
+      </div>
+      {/* Counter Values Section */}
+      <div>
+        <Counter />
+      </div>
+      {/*Our Products*/}
+      <div>
+        <Ourproducts />
+      </div>
+      {/*Our Clients Section*/}
+      <div>
+        <Ourclients />
       </div>
     </div>
   );
