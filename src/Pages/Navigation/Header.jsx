@@ -6,6 +6,12 @@ import logo from '../../Assets/Pictures/logo.svg'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+
+        const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+
     return (
         <div>
             {/* Header Background with Particles */}
@@ -16,7 +22,9 @@ const Header = () => {
                 <div className="absolute top-0 left-0 w-full h-[100px] z-[9999] px-19">
                     <div className="flex w-full h-full">
                         <div className="flex items-center w-[50%] h-[100%]">
-                            <Link to='/'>
+                            <Link to='/'
+                            onClick={scrollToTop}
+                            >
                             <img src={logo} alt="Logo" className="w-[250px]"    />
                             </Link>
                         </div>

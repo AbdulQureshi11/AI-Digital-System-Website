@@ -19,9 +19,7 @@ import product2 from '../Assets/Pictures/product2.png'
 import product3 from '../Assets/Pictures/product3.png'
 import product4 from '../Assets/Pictures/product4.png'
 import product5 from '../Assets/Pictures/product5.png'
-
-import { FaBrain, FaMicrochip, FaChartLine, FaRobot } from "react-icons/fa"
-
+ 
 export const webmenu = [
     { id: 1, name: 'Home', path: '/' },
     { id: 2, name: 'About', path: '/about' },
@@ -102,27 +100,3 @@ export const ourOfficeMenu = [
 
 
 
-//Services Section Pages Items:
-//AI & Machine Learning Data
-export const services = [
-    {
-        icon: <FaBrain className="w-10 h-10 text-indigo-400" />,
-        title: "Machine Learning",
-        desc: "Custom ML solutions to help you predict, classify, and automate tasks effectively."
-    },
-    {
-        icon: <FaMicrochip className="w-10 h-10 text-indigo-400" />,
-        title: "Deep Learning",
-        desc: "Neural networks for image recognition, NLP, and complex problem solving."
-    },
-    {
-        icon: <FaChartLine className="w-10 h-10 text-indigo-400" />,
-        title: "Data Analytics",
-        desc: "Turn raw data into insights with our advanced analytics & visualization tools."
-    },
-    {
-        icon: <FaRobot className="w-10 h-10 text-indigo-400" />,
-        title: "AI Chatbots",
-        desc: "Smart conversational agents that engage your users 24/7 with accuracy."
-    },
-]

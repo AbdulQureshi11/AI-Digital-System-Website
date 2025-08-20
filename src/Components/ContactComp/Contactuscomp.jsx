@@ -55,6 +55,7 @@ const Contactuscomp = () => {
                     </div>
                 </div>
             </div>
+
             {/*Contact Form */}
             <div className="px-19 py-5">
                 <ContactForm />

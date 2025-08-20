@@ -2,6 +2,11 @@ import { NavLink } from "react-router-dom";
 import { ourproducts } from "../../Utlis/Menubar";
 
 const Ourproducts = () => {
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
   return (
     <div className="bg-white w-full px-19">
       <div className="max-w-7xl mx-auto">
@@ -25,6 +30,7 @@ const Ourproducts = () => {
             <NavLink
               to={item.path}
               key={idx}
+              onClick={scrollToTop}  
               className="relative group overflow-hidden shadow-lg cursor-pointer"
             >
               <img
@@ -53,6 +59,7 @@ const Ourproducts = () => {
             <NavLink
               to={item.path}
               key={idx}
+              onClick={scrollToTop}  
               className="relative group overflow-hidden shadow-lg cursor-pointer"
             >
               <img
