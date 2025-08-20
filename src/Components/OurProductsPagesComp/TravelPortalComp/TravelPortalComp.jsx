@@ -1,7 +1,13 @@
+import { Link } from 'react-router-dom';
 import Travel from '../../../Assets/Pictures/product1.png'
 import Header from "../../../Pages/Navigation/Header";
 
 const TravelPortalComp = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <div className="min-h-screen font-Robot">
       {/* Navbar */}
@@ -43,11 +49,8 @@ const TravelPortalComp = () => {
           </ul>
 
           <div className="flex gap-4 pt-4">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-xl transition">
+            <button className="bg-blue-600 hover:bg-[#f15922] cursor-pointer text-white font-medium px-6 py-3 rounded-xl transition">
               Get Started
-            </button>
-            <button className="border border-gray-400 text-gray-700 hover:bg-gray-100 font-medium px-6 py-3 rounded-xl transition">
-              Learn More
             </button>
           </div>
         </div>
@@ -65,8 +68,18 @@ const TravelPortalComp = () => {
             reservations to holiday planning, our portal ensures efficiency,
             scalability, and a modern travel experience.
           </p>
+          {/* Button to OurProducts */}
+          <Link
+            onClick={scrollToTop}
+            to="/products">
+            <button className='border-2 border-[#f15922] text-[#f15922] font-Robot px-15 py-4 mt-9 hover:text-white hover:bg-[#f15922] cursor-pointer transition-all rounded-3xl'>
+              Explore More Products
+            </button>
+          </Link>
         </div>
       </div>
+
+
     </div>
   )
 }
