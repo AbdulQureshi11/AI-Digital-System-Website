@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoClose, IoSearch } from "react-icons/io5";
-import { sidebar_pages } from "../../Utlis/Menubar";
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import { servicesitems } from "../../Utlis/Serviceslist";
 
 const Searchbtn = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,7 @@ const Searchbtn = () => {
       {/* Sidebar */}
       <div
         className={`
-          fixed top-0 right-0 h-screen bg-[#002C8B] w-[380px] transform transition-transform duration-300 ease-in-out z-30
+          fixed top-0 right-0 h-screen bg-[#002C8B] w-[300px] transform transition-transform duration-300 ease-in-out z-30
           ${isOpen ? "translate-x-0" : "translate-x-full"}
         `}
       >
@@ -42,7 +42,7 @@ const Searchbtn = () => {
           {/* Close Button */}
           <div className="w-full flex justify-end">
             <button
-              className="text-white font-Robot cursor-pointer text-[20px] flex flex-col items-center"
+              className="text-white font-Robot cursor-pointer text-[16px] flex flex-col items-center"
               onClick={toggleSidebar}
             >
               Close
@@ -51,38 +51,35 @@ const Searchbtn = () => {
           </div>
 
           {/* Search Input */}
-          <div className="flex items-center mt-10 w-full">
+          <div className="flex items-center mt-6 w-full">
             <input
               type="text"
-              className="w-[95%] border-b-2 font-Robot border-white text-[20px] px-2 placeholder:text-white bg-transparent focus:outline-none"
+              className="w-[80%] border-b-2 font-Robot border-white text-[14px] px-2 placeholder:text-white bg-transparent focus:outline-none"
               placeholder="Search here ..."
               autoFocus={isOpen}
             />
             <div className="w-1/5 flex justify-center">
-              <IoSearch className="text-white text-xl" />
+              <IoSearch className="text-white text-lg" />
             </div>
           </div>
 
-          {/*Popular Search */}
-          <div className="text-[25px] mt-10">
-            <h1>Popular Searches
-            </h1>
+          {/* Services Title */}
+          <div className="text-[18px] mt-6 text-white mb-3">
+            Popular Search
           </div>
 
-          {/*Pages */}
-          <div className="mt-3 flex flex-wrap">
-            {sidebar_pages?.map((items, index) => {
-              return (
-                <div
-                  key={index}
-                  className="flex-[0_0_48%] font-Robot text-[14px] p-2"
-                >
-                  <NavLink className='bg-white rounded-md hover:bg-[#00CAFF] hover:text-white transition-all text-black px-3 py-1 block text-center' to={items?.path}>
-                    {items?.name}
-                  </NavLink>
-                </div>
-              )
-            })}
+          {/* Services List in 2-column grid */}
+          <div className="grid grid-cols-2 gap-2">
+            {servicesitems.map((item) => (
+              <NavLink
+                key={item.id}
+                to={`/services/${item.slug}`}
+                onClick={toggleSidebar}
+                className="bg-white rounded-md hover:bg-[#00CAFF] hover:text-white transition-all text-black text-[10px] px-2 py-2 text-center"
+              >
+                {item.name}
+              </NavLink>
+            ))}
           </div>
         </div>
       </div>
