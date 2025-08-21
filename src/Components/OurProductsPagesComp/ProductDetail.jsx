@@ -25,22 +25,13 @@ const ProductDetail = () => {
 
       {/* Product Section */}
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Product Image */}
-        <div>
-          <img
-            src={product.image}
-            alt={product.name}
-            className="rounded-2xl shadow-lg w-full object-cover"
-          />
-        </div>
-
         {/* Product Content */}
         <div className="space-y-6">
           <div className="relative mb-5 inline-block">
             <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-RobotB">
               {product.name}
             </h1>
-            <span className="absolute left-0 bottom-2 h-[13px] w-[80px] bg-[#f15922] z-0"></span>
+            <span className="absolute left-0 top-12 h-[13px] w-[80px] bg-[#f15922] z-0"></span>
           </div>
 
           {/* Product Detail */}
@@ -54,6 +45,15 @@ const ProductDetail = () => {
               ))}
             </ul>
           )}
+        </div>
+
+        {/* Product Image */}
+        <div>
+          <img
+            src={product.image}
+            alt={product.name}
+            className="rounded-2xl shadow-lg w-full object-cover"
+          />
         </div>
       </div>
 

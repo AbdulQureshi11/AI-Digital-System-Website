@@ -13,8 +13,7 @@ const Dropdown = () => {
     <div>
       {/* Hamburger icon */}
       <div
-        className={`menu_toggler z-10 cursor-pointer relative flex flex-col w-9 h-8 justify-between ${isActive ? "active" : ""
-          }`}
+        className={`menu_toggler z-10 cursor-pointer relative flex flex-col w-9 h-8 justify-between ${isActive ? "active" : ""}`}
         onClick={toggleActive}
       >
         <span className="block bg-black h-1 rounded-md transition-all duration-300 ease-in-out"></span>
@@ -31,7 +30,7 @@ const Dropdown = () => {
         `}
       >
         {/* Drop Down Container */}
-        <div className="p-6 w-full h-full flex flex-col justify-between overflow-hidden">
+        <div className="p-6 w-full h-full flex flex-col justify-between overflow-y-auto">
 
           {/* Close Button */}
           <div className="w-full flex justify-end">
@@ -39,7 +38,6 @@ const Dropdown = () => {
               className="text-white cursor-pointer text-[20px] flex flex-col items-center"
               onClick={toggleActive}
             >
-
               <span className="mt-1">Close</span>
               <IoClose size={26} />
             </button>
@@ -68,10 +66,7 @@ const Dropdown = () => {
           {/* Social Links */}
           <div className="flex justify-center gap-6 md:gap-12 text-[20px] md:text-[25px] mt-10 mb-6">
             {social_links?.map((items, index) => (
-              <div
-                key={index}
-                className="font-Robot hover:text-[#00CAFF]"
-              >
+              <div key={index} className="font-Robot hover:text-[#00CAFF]">
                 <NavLink to={items?.path} onClick={toggleActive}>
                   {items?.icon}
                 </NavLink>

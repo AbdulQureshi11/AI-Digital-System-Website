@@ -17,7 +17,7 @@ const Header = () => {
         <ParticlesComponent id="particles" />
 
         {/* Header Section */}
-        <div className="absolute top-0 left-0 w-full h-[100px] z-[9999] px-4 md:px-10">
+        <div className="absolute top-0 left-0 w-full h-[100px] z-[9999] px-4 md:px-19">
           <div className="flex flex-row items-center justify-between w-full h-full">
             
             {/* Logo */}

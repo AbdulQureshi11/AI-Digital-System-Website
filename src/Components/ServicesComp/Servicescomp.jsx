@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import ServicesSection from "../HomeComp/ServicesSection";
 import Header from "../../Pages/Navigation/Header";
 
@@ -6,7 +6,7 @@ const Servicescomp = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  };
 
   return (
     <div className="font-Robot">
@@ -21,18 +21,18 @@ const Servicescomp = () => {
       </div>
 
       {/* Why Choose Us Section (matching ServicesSection design) */}
-      <div className="bg-[#F5F4F2] w-full px-19 py-20">
+      <div className="bg-[#F5F4F2] w-full px-6 md:px-19 py-20">
         <hr className="mb-10" />
         <div className="max-w-6xl mx-auto">
           {/* Heading + Subtitle */}
           <div className="flex items-start flex-wrap md:flex-nowrap mb-10">
-            <div className="relative w-full md:w-3/5 mb-6 md:mb-0">
-              <h1 className="relative z-10 text-[#002C8B] text-[42px] font-RobotB font-black">
+            <div className="relative w-full md:w-3/5 mb-6 md:mb-0 text-center md:text-left">
+              <h1 className="relative z-10 text-[#002C8B] text-[32px] sm:text-[42px] font-RobotB font-black">
                 Why Choose Us?
               </h1>
-              <span className="absolute left-0 bottom-1 h-[13px] w-[120px] bg-[#f15922] z-0"></span>
+              <span className="absolute md:left-0 md:top-10 top-7 left-14 md:h-[13px] md:w-[120px] h-[13px] w-[90px] bg-[#f15922] z-0"></span>
             </div>
-            <div className="w-full md:w-2/5 text-[#3a3a3a]">
+            <div className="w-full md:w-2/5 text-[#3a3a3a] text-center md:text-left">
               <p>
                 We go beyond providing services — we create impactful solutions that
                 drive measurable growth. With expertise, innovation, and a client-first
@@ -59,7 +59,7 @@ const Servicescomp = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Servicescomp
+export default Servicescomp;

@@ -1,8 +1,11 @@
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../Assets/Pictures/logo.svg';
-import { fourservices, ourOfficeMenu, webmenu } from '../../Utlis/Menubar';
+
 import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import { servicesitems } from '../../Utlis/Serviceslist';
+import { ourOfficeMenu, webmenu } from '../../Utlis/Menubar';
 
 // Smooth scroll to top with easing
 const smoothScrollToTop = () => {
@@ -32,14 +35,15 @@ const FooterComp = () => {
                 {/* Our Services Section */}
                 <div className="flex-1 text-left text-white space-y-3 font-RobotL">
                     <h1 className='text-[#00CAFF] font-Robot text-[22px] md:text-[25px]'>Our Services</h1>
-                    {fourservices?.map((items, index) => (
+                    {/** Dynamically fetch the services */}
+                    {servicesitems.map((item, index) => (
                         <div key={index}>
                             <NavLink
                                 className='hover:text-[#00CAFF]'
-                                to={items?.path}
+                                to={`/services/${item.slug}`} // Dynamic link to services details
                                 onClick={smoothScrollToTop}
                             >
-                                {items?.name}
+                                {item.name}
                             </NavLink>
                         </div>
                     ))}
@@ -69,7 +73,7 @@ const FooterComp = () => {
                             <h1 className='text-[#00CAFF] text-[18px] md:text-[20px]'>{items?.icon}</h1>
                             {items?.id === 4 ? (
                                 <a
-                                    href=""
+                                    href={items?.path}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-[#00CAFF]"
