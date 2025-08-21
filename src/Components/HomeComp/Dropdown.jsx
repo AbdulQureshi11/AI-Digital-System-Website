@@ -12,7 +12,7 @@ const Dropdown = () => {
   return (
     <div>
       {/* Hamburger icon */}
-      <li
+      <div
         className={`menu_toggler z-10 cursor-pointer relative flex flex-col w-9 h-8 justify-between ${isActive ? "active" : ""
           }`}
         onClick={toggleActive}
@@ -20,7 +20,7 @@ const Dropdown = () => {
         <span className="block bg-black h-1 rounded-md transition-all duration-300 ease-in-out"></span>
         <span className="block bg-black h-1 rounded-md transition-all duration-300 ease-in-out"></span>
         <span className="block bg-black h-1 rounded-md transition-all duration-300 ease-in-out"></span>
-      </li>
+      </div>
 
       {/* Full screen dropdown */}
       <div

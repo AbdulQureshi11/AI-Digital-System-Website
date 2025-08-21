@@ -16,13 +16,13 @@ const Searchbtn = () => {
       {/* Search Icon */}
       <div className="relative z-20">
         <CiSearch
-          className="cursor-pointer"
+          className="cursor-pointer w-10 h-10 sm:w-8 sm:h-8 md:w-10 md:h-10"
           onClick={toggleSidebar}
           title="Toggle Search Panel"
         />
       </div>
 
-      {/* Overlay */}
+      
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/40 z-10 overlay-blur"

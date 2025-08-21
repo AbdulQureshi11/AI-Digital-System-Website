@@ -1,20 +1,20 @@
+import "../../index.css";
+import Counter from "./Counter";
+import Dropdown from "./Dropdown";
+import Searchbtn from "./Searchbtn";
+import Ourclients from "./Ourclients";
+import Ourproducts from "./Ourproducts";
+import Aboutsection from "./Aboutsection";
 import { useState, useEffect } from "react";
+import ServicesSection from "./ServicesSection";
+import logo from "../../Assets/Pictures/logo.svg";
 import Background from "../Background/Background";
 import ParticlesBg from "../ParticalsComp/ParticalsBg";
-import logo from "../../Assets/Pictures/logo.svg";
-import Searchbtn from "./Searchbtn";
-import Dropdown from "./Dropdown";
 import brainimg from "../../Assets/Pictures/brain_img.svg";
-import "../../index.css";
-import Aboutsection from "./Aboutsection";
-import ServicesSection from "./ServicesSection";
-import Counter from "./Counter";
-import Ourproducts from "./Ourproducts";
-import Ourclients from "./Ourclients";
 
 const brainDotClasses = [
-  "brain-dot-1","brain-dot-2","brain-dot-3","brain-dot-4",
-  "brain-dot-5","brain-dot-6","brain-dot-7","brain-dot-8",
+  "brain-dot-1", "brain-dot-2", "brain-dot-3", "brain-dot-4",
+  "brain-dot-5", "brain-dot-6", "brain-dot-7", "brain-dot-8",
 ];
 
 const Homecomp = () => {
@@ -30,17 +30,17 @@ const Homecomp = () => {
   return (
     <div className="home-container w-full overflow-x-hidden">
       {/* Hero Section with Background + Particles */}
-     <div className={`relative ${isMobile ? "h-[50vh]" : "h-screen"} w-full`}>
-  <Background>
-    <ParticlesBg id="particles" isMobile={isMobile} />
-  </Background>
+      <div className={`relative ${isMobile ? "h-[50vh]" : "h-screen"} w-full`}>
+        <Background>
+          <ParticlesBg id="particles" isMobile={isMobile} />
+        </Background>
 
         {/* Header Section */}
         <header className="absolute top-0 left-0 w-full z-[9999] py-4 md:px-19">
           <div className="flex flex-row w-full items-center justify-between px-4 md:px-0">
             {/* Logo */}
             <div className="flex justify-start w-[50%]">
-              <img src={logo} alt="Logo" className="w-[120px] md:w-[250px]" />
+              <img src={logo} alt="Logo" className="w-[180px] md:w-[250px]" />
             </div>
 
             {/* Search Button + Dropdown */}
@@ -48,6 +48,7 @@ const Homecomp = () => {
               <Searchbtn />
               <Dropdown />
             </div>
+
           </div>
         </header>
 
@@ -63,7 +64,7 @@ const Homecomp = () => {
               High-performing software solutions that drive your business forward.
               Accelerate your software development roadmap through custom engineering solutions.
             </p>
-            <button className="bg-[#00CAFF] text-white font-Robot px-6 md:px-12 py-2 md:py-3 mt-3 hover:bg-[#f15922] transition-all rounded-3xl text-sm md:text-base">
+            <button className="bg-[#00CAFF] text-white font-Robot px-6 md:px-12 py-2 md:py-3 mt-3 hover:bg-[#f15922] transition-all rounded-3xl text-sm md:text-base cursor-pointer">
               Read More
             </button>
           </div>
