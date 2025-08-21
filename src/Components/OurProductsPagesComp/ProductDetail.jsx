@@ -3,8 +3,8 @@ import { ourproducts } from "../../Utlis/Productlist";
 import Header from "../../Pages/Navigation/Header";
 
 const ProductDetail = () => {
-  const { slug } = useParams(); // <-- use slug instead of id
-  const product = ourproducts.find((item) => item.slug === slug); // <-- find by slug
+  const { slug } = useParams();
+  const product = ourproducts.find((item) => item.slug === slug);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -40,7 +40,7 @@ const ProductDetail = () => {
             <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-RobotB">
               {product.name}
             </h1>
-            <span className="absolute left-0 bottom-2 h-[13px] w-[120px] bg-[#f15922] z-0"></span>
+            <span className="absolute left-0 bottom-2 h-[13px] w-[80px] bg-[#f15922] z-0"></span>
           </div>
 
           {/* Product Detail */}
@@ -60,7 +60,7 @@ const ProductDetail = () => {
       {/* Why Choose Section */}
       <div className="bg-gray-100 py-16">
         <div className="max-w-5xl mx-auto text-center space-y-6 px-6">
-          <h2 className="text-3xl font-semibold text-gray-800">
+          <h2 className="text-3xl font-semibold text-[#002C8B]">
             Why Choose Our {product.name}?
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">

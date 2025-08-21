@@ -103,7 +103,6 @@
   height: 100vh;
   background: linear-gradient(135deg, #171a88 0%, #0f1018 100%);
   overflow: hidden;
-  position: relative;
 }
 
 .sidebar-gradient {
@@ -178,3 +177,9 @@
 .animate-spin-slow {
   animation: spin-slow 30s linear infinite;
 }
+
+
+
+
+
+

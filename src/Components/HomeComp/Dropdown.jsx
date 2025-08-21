@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
-import logo from '../../Assets/Pictures/logo.svg'
+import logo from "../../Assets/Pictures/logo.svg";
 import { social_links, webmenu } from "../../Utlis/Menubar";
 import { NavLink } from "react-router-dom";
 
@@ -13,7 +13,8 @@ const Dropdown = () => {
     <div>
       {/* Hamburger icon */}
       <li
-        className={`menu_toggler z-10 cursor-pointer relative flex flex-col w-9 h-8 justify-between ${isActive ? "active" : ""}`}
+        className={`menu_toggler z-10 cursor-pointer relative flex flex-col w-9 h-8 justify-between ${isActive ? "active" : ""
+          }`}
         onClick={toggleActive}
       >
         <span className="block bg-black h-1 rounded-md transition-all duration-300 ease-in-out"></span>
@@ -24,66 +25,59 @@ const Dropdown = () => {
       {/* Full screen dropdown */}
       <div
         className={`
-          fixed inset-x-0 top-0 h-screen bg-white shadow-lg z-40
+          fixed inset-0 shadow-lg z-40 home-banner 
           transform transition-transform duration-300 ease-in-out
           ${isActive ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        {/*Drop Down Container */}
-        <div className="p-8 z-40 home-banner">
+        {/* Drop Down Container */}
+        <div className="p-6 w-full h-full flex flex-col justify-between overflow-hidden">
 
-          <div className="w-full flex pr-5 justify-end">
+          {/* Close Button */}
+          <div className="w-full flex justify-end">
             <button
               className="text-white cursor-pointer text-[20px] flex flex-col items-center"
               onClick={toggleActive}
             >
-              Close
-              <IoClose className="mt-[-1]" />
+
+              <span className="mt-1">Close</span>
+              <IoClose size={26} />
             </button>
           </div>
 
-          {/*Logo */}
-          <div className="flex z-0 justify-center mt-4">
-            <img src={logo} alt="" className="w-[380px]" />
+          {/* Logo */}
+          <div className="flex justify-center mt-4">
+            <img src={logo} alt="logo" className="w-[220px] md:w-[380px]" />
           </div>
 
-          <div className="flex gap-15 justify-center text-[25px] mt-35">
-            {
-              webmenu?.map((items, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="font-Robot"
-                  >
-                    <NavLink
-                    className='hover:text-[#00CAFF]'
-                      to={items?.path}>
-                      {items?.name}
-                    </NavLink>
-                  </div>
-                )
-              })
-            }
+          {/* Menu Links */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-10 justify-center items-center text-[18px] md:text-[24px] mt-10">
+            {webmenu?.map((items, index) => (
+              <div key={index} className="font-Robot">
+                <NavLink
+                  className="hover:text-[#00CAFF]"
+                  to={items?.path}
+                  onClick={toggleActive}
+                >
+                  {items?.name}
+                </NavLink>
+              </div>
+            ))}
           </div>
 
-          <div className="flex gap-15 justify-center text-[25px] mt-35">
-            {
-              social_links?.map((items, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="font-Robot hover:text-[#00CAFF]"
-                  >
-                    <NavLink
-                      to={items?.path}>
-                      {items?.icon}
-                    </NavLink>
-                  </div>
-                )
-              })
-            }
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 md:gap-12 text-[20px] md:text-[25px] mt-10 mb-6">
+            {social_links?.map((items, index) => (
+              <div
+                key={index}
+                className="font-Robot hover:text-[#00CAFF]"
+              >
+                <NavLink to={items?.path} onClick={toggleActive}>
+                  {items?.icon}
+                </NavLink>
+              </div>
+            ))}
           </div>
-
         </div>
       </div>
     </div>
