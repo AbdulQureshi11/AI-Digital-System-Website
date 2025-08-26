@@ -5,7 +5,7 @@ import "swiper/css";
 
 const Ourproducts = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smsooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
