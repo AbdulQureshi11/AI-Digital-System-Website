@@ -19,9 +19,14 @@ const brainDotClasses = [
 
 const Homecomp = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isIpad, setIsIpad] = useState(false);
 
   useEffect(() => {
-    const checkScreenSize = () => setIsMobile(window.innerWidth <= 768);
+    const checkScreenSize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768); // mobile <768
+      setIsIpad(width >= 768 && width <= 1024); // iPad range (including iPad Mini, Surface Pro, etc.)
+    };
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
@@ -30,7 +35,9 @@ const Homecomp = () => {
   return (
     <div className="home-container w-full overflow-x-hidden">
       {/* Hero Section with Background + Particles */}
-      <div className={`relative ${isMobile ? "h-[50vh]" : "h-screen"} w-full`}>
+      <div
+        className={`relative w-full ${isMobile ? "h-[50vh]" : isIpad ? "h-[60vh]" : "h-screen"}`}
+      >
         <Background>
           <ParticlesBg id="particles" isMobile={isMobile} />
         </Background>
@@ -48,7 +55,6 @@ const Homecomp = () => {
               <Searchbtn />
               <Dropdown />
             </div>
-
           </div>
         </header>
 
@@ -56,7 +62,9 @@ const Homecomp = () => {
         <div className="absolute flex flex-col md:flex-row left-0 w-full h-full z-30 top-0 px-4 md:px-19 pt-20 md:pt-0">
           {/* Left text */}
           <div className="w-full md:w-[50%] h-full flex flex-col justify-center items-start text-left space-y-2 md:space-y-3">
-            <h1 className="text-white font-Robot text-base md:text-[20px]">Helping Business</h1>
+            <h1 className="text-white font-Robot text-base md:text-[20px]">
+              Helping Business
+            </h1>
             <h1 className="text-[#00CAFF] font-Robot font-bold text-2xl md:text-[40px] leading-tight">
               Through Technology
             </h1>
@@ -69,28 +77,28 @@ const Homecomp = () => {
             </button>
           </div>
 
-          {/* Brain Image + Dots (hidden on mobile) */}
-          {!isMobile && (
-            <div className="relative w-full md:w-[540px] mt-8 md:mt-25 overflow-hidden z-10 flex justify-center items-center md:block">
-              <img
-                src={brainimg}
-                alt="Brain"
-                className="w-64 md:w-full max-w-[300px] md:max-w-none"
-              />
+          {/* Brain Image + Dots (hide on mobile, show on iPad + Desktop) */}
+          <div className="hidden md:flex relative w-full md:w-[540px] mt-16 overflow-hidden z-10 justify-center items-center">
+            <img
+              src={brainimg}
+              alt="Brain"
+              className={`w-72 ${isIpad ? "mt-6" : "mt-40"} md:w-full max-w-[320px] md:max-w-[480px] lg:max-w-[600px] object-contain`}
+            />
+            <div className="flex flex-wrap justify-center">
               {brainDotClasses.map((dotClass, index) => (
                 <div key={index}>
                   {/* Base dot */}
                   <span
-                    className={`absolute w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-cyan-500 rounded-full ${dotClass}`}
+                    className={`absolute w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-cyan-500 rounded-full ${dotClass} ${isIpad ? "mt-25" : ""}`}
                   ></span>
                   {/* Blinking overlay */}
                   <span
-                    className={`absolute w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-cyan-500 rounded-full animate-ping-slow ${dotClass}`}
+                    className={`absolute w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-cyan-500 rounded-full animate-ping-slow ${dotClass} ${isIpad ? "mt-25" : ""}`}
                   ></span>
                 </div>
               ))}
             </div>
-          )}
+          </div>
         </div>
       </div>
 

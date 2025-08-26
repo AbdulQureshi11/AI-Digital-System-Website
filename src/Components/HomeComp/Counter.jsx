@@ -10,10 +10,10 @@ const Counter = () => {
                             key={index}
                             className="flex flex-col items-center font-Robot text-gray-500 gap-2"
                         >
-                            {/* Pehle text */}
+
                             <h1 className="text-[13px]">{items?.label}</h1>
 
-                            {/* Fir number */}
+
                             <h1 className="font-RobotEB text-[#002C8B] text-[70px]">
                                 {items?.target}
                             </h1>

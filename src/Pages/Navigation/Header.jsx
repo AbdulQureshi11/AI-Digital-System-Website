@@ -23,7 +23,7 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center">
               <Link to='/' onClick={scrollToTop}>
-                <img src={logo} alt="Logo" className="w-[150px] md:w-[250px]" />
+                <img src={logo} alt="Logo" className="w-[180px] md:w-[250px]" />
               </Link>
             </div>
 

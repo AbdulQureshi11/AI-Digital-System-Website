@@ -13,7 +13,7 @@ const ParticlesBg = ({ id, isMobile }) => {
 
   const options = useMemo(
     () => ({
-      fullScreen: { enable: false }, 
+      fullScreen: { enable: false },
       background: { color: { value: "transparent" } },
       fpsLimit: 120,
       particles: {
@@ -43,7 +43,7 @@ const ParticlesBg = ({ id, isMobile }) => {
 
   return (
     <div className="absolute inset-0 w-full h-full z-0">
-      
+
       <Particles id={id} options={options} className="w-full h-full" />
     </div>
   );

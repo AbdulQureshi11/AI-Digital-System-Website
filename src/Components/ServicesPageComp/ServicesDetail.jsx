@@ -40,7 +40,7 @@ const ServicesDetail = () => {
             )}
           </div>
 
-          {/* Image Section (centered, comes before QuickLinks on mobile) */}
+          {/* Image Section */}
           <div className="flex-1 flex justify-center order-2 md:order-2">
             <img
               src={service.image}
@@ -49,25 +49,28 @@ const ServicesDetail = () => {
             />
           </div>
         </div>
-        {/* Quick Links (Mobile) - full width, after image */}
+
+        {/* Quick Links (Mobile) */}
         <div className="w-full order-3 mt-8 md:hidden">
           <QuickLinks />
         </div>
 
-        {/* Quick Links (Desktop) - full width below hero */}
+        {/* Quick Links (Desktop) */}
         <div className="w-full mt-16 hidden md:block">
           <QuickLinks />
         </div>
 
         <hr className="border-t border-gray-300" />
 
-        {/* Why Choose Section */}
+        {/* Why Choose Section (centered) */}
         <div className="bg-gray-100 py-16 px-6 md:px-19">
-          <div className="max-w-5xl mx-auto text-left space-y-6">
+          <div className="max-w-5xl mx-auto text-center space-y-6">
             <h2 className="text-2xl md:text-3xl font-bold text-[#002C8B]">
               {service.head}
             </h2>
-            <p className="text-gray-700 max-w-3xl">{service.whyChoose}</p>
+            <p className="text-gray-700 max-w-3xl mx-auto">
+              {service.whyChoose}
+            </p>
 
             <Link to="/contactus" onClick={scrollToTop}>
               <button className="border-2 border-[#f15922] text-[#f15922] font-Robot px-8 md:px-15 py-2 mt-6 md:mt-9 hover:text-white hover:bg-[#f15922] cursor-pointer transition-all rounded-3xl">

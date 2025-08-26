@@ -8,7 +8,7 @@ const Aboutsection = () => {
     return (
         <div className="w-full flex flex-col md:flex-row px-4 md:px-19">
             {/*Images Section */}
-            <div className="relative flex  md:w-1/2 items-center justify-center gap-3 md:gap-3 mt-[-30px] md:mt-[-200px]">
+            <div className="relative flex md:w-1/2 items-center justify-center gap-3 md:gap-3 mt-[-60px] md:mt-[-200px]">
                 {/* Image 1 */}
 
                 <img
@@ -19,7 +19,7 @@ const Aboutsection = () => {
 
 
                 {/* Image 2 with Circle */}
-                <div className="relative w-[46%] md:max-w-[46%] mt-30 md:mt-40">
+                <div className="relative w-[46%] md:max-w-[46%] mt-50 md:mt-40">
                     <img
                         src={welcome2}
                         alt="welcome2"
@@ -28,13 +28,13 @@ const Aboutsection = () => {
                     <img
                         src={circle}
                         alt="circle"
-                        className="absolute -top-10 -right-4 md:top-[-70px] md:right-[-40px] w-30 h-30 sm:w-26 sm:h-26 md:w-50 md:h-50 animate-spin-slow"
+                        className="absolute -top-25 -right-0 md:top-[-70px] md:right-[-40px] w-35 h-35 sm:w-26 sm:h-26 md:w-50 md:h-50 animate-spin-slow"
                     />
                 </div>
             </div>
 
             
-            <div className="w-full md:w-1/2 h-full pt-6 md:pt-20 md:ml-12 flex flex-col items-start">
+            <div className="w-full md:w-1/2 md:p-5 h-full pt-6 md:pt-20 md:ml-12 flex flex-col items-start">
                 {/* Heading */}
                 <div className="relative mb-5 inline-block text-left">
                     <h1 className="relative z-10 text-[#002C8B] text-[32px] md:text-[45px] font-black font-RobotB">

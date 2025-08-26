@@ -44,12 +44,12 @@ const Dropdown = () => {
           </div>
 
           {/* Logo */}
-          <div className="flex justify-center mt-4">
-            <img src={logo} alt="logo" className="w-[220px] md:w-[380px]" />
+          <div className="flex justify-center mt-0">
+            <img src={logo} alt="logo" className="w-[300px] md:w-[380px]" />
           </div>
 
           {/* Menu Links */}
-          <div className="flex flex-col md:flex-row gap-4 md:gap-10 justify-center items-center text-[18px] md:text-[24px] mt-10">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-10 mt-[-30px] md:justify-center items-center text-[18px] md:text-[24px] md:mt-10">
             {webmenu?.map((items, index) => (
               <div key={index} className="font-Robot">
                 <NavLink
@@ -64,10 +64,10 @@ const Dropdown = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center gap-6 md:gap-12 text-[20px] md:text-[25px] mt-10 mb-6">
+          <div className="flex justify-center gap-6 md:gap-12 text-[20px] md:text-[25px] md:mt-10 md:mb-10 mb-20">
             {social_links?.map((items, index) => (
               <div key={index} className="font-Robot hover:text-[#00CAFF]">
-                <NavLink to={items?.path} onClick={toggleActive}>
+                <NavLink to={items?.path} onClick={toggleActive} className='text-[30px]'>
                   {items?.icon}
                 </NavLink>
               </div>
