@@ -28,7 +28,7 @@ const Produtcscomp = () => {
               <h1 className="relative z-10 text-[#002C8B] text-[32px] sm:text-[42px] font-RobotB font-black">
                 Bring Your Idea to Life with Us
               </h1>
-              <span className="absolute md:left-0 md:top-10 top-7 left-14 md:h-[13px] md:w-[120px] h-[13px] w-[90px] bg-[#f15922] z-0"></span>
+              <span className="absolute md:left-0 md:top-10 top-8 left-3 md:h-[13px] md:w-[120px] h-[13px] w-[90px] bg-[#f15922] z-0"></span>
             </div>
             <div className="w-full md:w-2/5 text-[#3a3a3a] text-center md:text-left">
               <p className="font-Robot text-lg">
@@ -40,8 +40,8 @@ const Produtcscomp = () => {
           {/* Content + CTA */}
           <div className="text-center space-y-6">
             <p className="text-gray-600 font-Robot text-lg leading-relaxed max-w-3xl mx-auto">
-              Every project we take on is treated with care, focus, and attention to detail.  
-              We combine innovation, usability, and quality to ensure your product not only works perfectly but also makes a lasting impression.  
+              Every project we take on is treated with care, focus, and attention to detail.
+              We combine innovation, usability, and quality to ensure your product not only works perfectly but also makes a lasting impression.
               Ready to see your idea become reality? Partner with us and let's create something amazing together.
             </p>
             <Link
