@@ -5,18 +5,22 @@
   font-family: RobotoSlab-Regular;
   src: url('../src/Assets/Fonts/RobotoSlab-Regular.ttf')
 }
+
 @font-face {
   font-family: RobotoSlab-Bold;
   src: url('../src/Assets/Fonts/RobotoSlab-Bold.ttf')
 }
+
 @font-face {
   font-family: RobotoSlab-ExtraBold;
   src: url('../src/Assets/Fonts/RobotoSlab-ExtraBold.ttf')
 }
+
 @font-face {
   font-family: RobotoSlab-Light;
   src: url('../src/Assets/Fonts/RobotoSlab-Light.ttf')
 }
+
 @font-face {
   font-family: RobotoSlab-Thin;
   src: url('../src/Assets/Fonts/RobotoSlab-Thin.ttf')
@@ -54,45 +58,101 @@
   animation: ping-slow 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* Brain dots positions */
-.brain-dot-1 {
-  top: 15vw;
-  left: 8vw;
+
+/* Brain dots positions for iPad and Desktop */
+/* Brain dots positions for iPad and Desktop */
+
+/* For iPad and Desktop (same positions) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .brain-dot-1 {
+    top: 25vw;
+    /* Adjusted for all iPads and tablets */
+    left: 8vw;
+  }
+
+  .brain-dot-2 {
+    top: 15vw;
+    /* Adjusted for all iPads and tablets */
+    left: 13vw;
+  }
+
+  .brain-dot-3 {
+    top: 22.5vw;
+    /* Adjusted for all iPads and tablets */
+    left: 12.6vw;
+  }
+
+  .brain-dot-4 {
+    top: 30.2vw;
+    /* Adjusted for all iPads and tablets */
+    left: 18.4vw;
+  }
+
+  .brain-dot-5 {
+    top: 6.7vw;
+    /* Adjusted for all iPads and tablets */
+    left: 26vw;
+  }
+
+  .brain-dot-6 {
+    top: 13.5vw;
+    /* Adjusted for all iPads and tablets */
+    left: 30vw;
+  }
+
+  .brain-dot-7 {
+    top: 19.2vw;
+    /* Adjusted for all iPads and tablets */
+    left: 29vw;
+  }
+
+  .brain-dot-8 {
+    top: 6vw;
+    /* Adjusted for all iPads and tablets */
+    left: 15.4vw;
+  }
 }
 
-.brain-dot-2 {
-  top: 18vw;
-  left: 13vw;
-}
+@media (min-width: 1024px) {
+  .brain-dot-1 {
+    top: 25.7vw;
+    left: 9vw;
+  }
 
-.brain-dot-3 {
-  top: 22.5vw;
-  left: 12.6vw;
-}
+  .brain-dot-2 {
+    top: 15.4vw;
+    left: 13vw;
+  }
 
-.brain-dot-4 {
-  top: 30.2vw;
-  left: 18.4vw;
-}
+  .brain-dot-3 {
+    top: 22.8vw;
+    left: 12.6vw;
+  }
 
-.brain-dot-5 {
-  top: 6.7vw;
-  left: 26vw;
-}
+  .brain-dot-4 {
+    top: 30.2vw;
+    left: 18.9vw;
+  }
 
-.brain-dot-6 {
-  top: 13.5vw;
-  left: 30vw;
-}
+  .brain-dot-5 {
+    top: 10vw;
+    left: 25.9vw;
+  }
 
-.brain-dot-7 {
-  top: 19.2vw;
-  left: 29vw;
-}
+  .brain-dot-6 {
+    top: 14.3vw;
+    left: 30vw;
+  }
 
-.brain-dot-8 {
-  top: 6vw;
-  left: 15.4vw;
+  .brain-dot-7 {
+    top: 18.5vw;
+    left: 34.4vw;
+  }
+
+  .brain-dot-8 {
+    top: 9vw;
+    left: 15.4vw;
+  }
 }
 
 .animate-ping-slow {
@@ -103,7 +163,6 @@
   height: 100vh;
   background: linear-gradient(135deg, #171a88 0%, #0f1018 100%);
   overflow: hidden;
-  position: relative;
 }
 
 .sidebar-gradient {
@@ -171,8 +230,13 @@
 
 /*This section of Circle movment*/
 @keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-spin-slow {

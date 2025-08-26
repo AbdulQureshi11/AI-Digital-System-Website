@@ -86,5 +86,5 @@ export const ourproducts = [
             'Seamless integration across multiple platforms'
         ],
         whyChoose: `Trusted by enterprises worldwide, our AI Bot Agent empowers organizations to communicate smarter and faster. With advanced automation, intelligent collaboration tools, and enterprise-grade security, it enables your teams to work seamlessly in today’s digital-first world.`
-    },
+    }
 ];

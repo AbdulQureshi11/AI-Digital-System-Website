@@ -6,8 +6,6 @@ import Contactus from './Pages/Contactus'
 import Home from './Pages/Home'
 
 //Our Services Pages Link
-
-
 import Navigation from './Pages/Navigation/Navigation'
 
 //Our Products Pages Link
@@ -28,14 +26,13 @@ const App = () => {
         <Route path='/products' element={<Products />} />
         <Route path='/contactus' element={<Contactus />} />
 
-
-        {/*Page linked in Services Only */}
+        {/*Services Page Dynamic Routing */}
         <Route path="/services" element={<Services />} />
         <Route path="/services/:slug" element={<ServicesDetail />} />
 
-        {/*Our Products Pages Link */}
+        {/*Product Page Dynamic Routing */}
         <Route path="/products" element={<Products />} />
-  <Route path="/products/:slug" element={<ProductDetail />} />
+        <Route path="/products/:slug" element={<ProductDetail />} />
       </Route>
     )
   )

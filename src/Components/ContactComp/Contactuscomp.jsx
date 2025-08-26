@@ -10,7 +10,7 @@ const Contactuscomp = () => {
             </div>
 
             {/* Contact Us Section */}
-            <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="max-w-6xl mx-auto md:px-5 px-4 py-12">
 
                 {/* Flex container with 2 columns */}
                 <div className="flex flex-col md:flex-row gap-8">
@@ -42,7 +42,7 @@ const Contactuscomp = () => {
                     </div>
 
                     {/* Right Section - Map */}
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full  md:w-1/2">
                         <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
                             <iframe
                                 className="w-full h-full border-0"
@@ -57,7 +57,7 @@ const Contactuscomp = () => {
             </div>
 
             {/*Contact Form */}
-            <div className="px-19 py-5">
+            <div className="px-6 md:px-19 md:py-10">
                 <ContactForm />
             </div>
         </div>

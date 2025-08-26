@@ -6,71 +6,83 @@ import time from '../../Assets/Pictures/quality.svg'
 
 const Aboutsection = () => {
     return (
-        <div>
-            <div className='flex px-19 w-[100%]'>
-                <div className=" flex justify-evenly items-center relative w-full h-full">
-                    <img
-                        src={welcome1}
-                        alt=""
-                        className="max-w-[46%] h-auto object-contain"
-                    />
+        <div className="w-full flex flex-col md:flex-row px-4 md:px-19">
+            {/*Images Section */}
+            <div className="relative flex md:w-1/2 items-center justify-center gap-3 md:gap-3 mt-[-60px] md:mt-[-200px]">
+                {/* Image 1 */}
+
+                <img
+                    src={welcome1}
+                    alt="welcome"
+                    className="w-[46%] md:max-w-[46%] h-auto object-contain"
+                />
+
+
+                {/* Image 2 with Circle */}
+                <div className="relative w-[46%] md:max-w-[46%] mt-50 md:mt-40">
                     <img
                         src={welcome2}
-                        alt=""
-                        className="max-w-[46%] h-auto mt-50 object-contain"
+                        alt="welcome2"
+                        className="w-full h-auto object-contain"
                     />
-
                     <img
                         src={circle}
-                        alt=""
-                        className="absolute top-25 left-80 animate-spin-slow"
+                        alt="circle"
+                        className="absolute -top-25 -right-0 md:top-[-70px] md:right-[-40px] w-35 h-35 sm:w-26 sm:h-26 md:w-50 md:h-50 animate-spin-slow"
                     />
-                </div>
-
-                <div className="w-full h-full p-5 flex-col pt-30 ml-28 items-center ">
-                    <div className="relative mb-5 inline-block">
-                        <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-RobotB">About Us</h1>
-                        <span className="absolute left-0 bottom-3 h-[13px] w-[100px] bg-[#f15922] z-0"></span>
-                    </div>
-
-                    <p className="font-Robot text-[#6F6F6F] text-[16px] leading-8">
-                        Welcome to AI Digital Systems, formerly known as FamzSolutions, a pioneering
-                        technology services provider with a legacy dating back to 2012. Our
-                        rebranding in 2023 reflects our commitment to staying ahead in the
-                        ever-evolving tech landscape. Renowned for excellence in software
-                        development, AI tools, systems integrations, and VAS technologies, we have
-                        collaborated with both government departments in Pakistan, driving their
-                        digitization, and private sectors, delivering bespoke solutions. Our
-                        SAAS-based travel technologies and unique WhatsApp/Meta API showcase our
-                        dedication to innovation. Behind AI Digital Systems is a seasoned team with
-                        vast national and international experience in academia and industries. Join
-                        us on a journey into the future of technology, where innovation meets
-                        excellence.
-                    </p>
-                    {/*Reward Section */}
-                    <div className='flex w-[100%] h-[100px] mt-5'>
-                        <div className='w-[50%] h-full flex items-center gap-7 p-2'>
-                            <img src={client}
-                                alt=""
-                                className='w-[30%]'
-                            />
-                            <h1 className='font-Robot text-[18px] text-[#6F6F6F]'>Client satisfaction is our reward</h1>
-
-                        </div>
-                        <div className='w-[50%] h-full flex items-center gap-7 p-2'>
-                            <img src={time}
-                                alt=""
-                                className='w-[30%]'
-                            />
-                            <h1 className='font-Robot text-[18px] text-[#6F6F6F]'>We always complete tasks on time</h1>
-                        </div>
-                    </div>
-                    <div className='flex items-center  h-[50px] w-[100%] mb-20'>
-                        <button className='border-2 border-[#f15922] text-[#f15922] font-Robot px-15 py-2 mt-9 hover:text-white hover:bg-[#f15922] cursor-pointer transition-all rounded-3xl'>Read More</button>
-                    </div>
                 </div>
             </div>
 
+            
+            <div className="w-full md:w-1/2 md:p-5 h-full pt-6 md:pt-20 md:ml-12 flex flex-col items-start">
+                {/* Heading */}
+                <div className="relative mb-5 inline-block text-left">
+                    <h1 className="relative z-10 text-[#002C8B] text-[32px] md:text-[45px] font-black font-RobotB">
+                        About Us
+                    </h1>
+                    <span className="absolute left-0 bottom-1 md:bottom-3 h-[8px] md:h-[13px] w-[80px] md:w-[100px] bg-[#f15922] z-0"></span>
+                </div>
+
+                {/* Paragraph */}
+                <p className="font-Robot text-[#6F6F6F] text-[15px] md:text-[16px] leading-7 md:leading-8 text-left">
+                    Welcome to AI Digital Systems, formerly known as FamzSolutions, a
+                    pioneering technology services provider with a legacy dating back to
+                    2012. Our rebranding in 2023 reflects our commitment to staying ahead
+                    in the ever-evolving tech landscape. Renowned for excellence in
+                    software development, AI tools, systems integrations, and VAS
+                    technologies, we have collaborated with both government departments in
+                    Pakistan, driving their digitization, and private sectors, delivering
+                    bespoke solutions. Our SAAS-based travel technologies and unique
+                    WhatsApp/Meta API showcase our dedication to innovation. Behind AI
+                    Digital Systems is a seasoned team with vast national and
+                    international experience in academia and industries. Join us on a
+                    journey into the future of technology, where innovation meets
+                    excellence.
+                </p>
+
+                {/* Reward Section */}
+                <div className="flex w-full h-auto mt-5 gap-4 md:gap-0">
+                    <div className="w-1/2 h-full flex items-center gap-3 md:gap-7 p-2">
+                        <img src={client} alt="client" className="w-[28%] md:w-[30%]" />
+                        <h1 className="font-Robot text-[15px] md:text-[18px] text-[#6F6F6F] text-left">
+                            Client satisfaction is our reward
+                        </h1>
+                    </div>
+                    <div className="w-1/2 h-full flex items-center gap-3 md:gap-7 p-2">
+                        <img src={time} alt="time" className="w-[28%] md:w-[30%]" />
+                        <h1 className="font-Robot text-[15px] md:text-[18px] text-[#6F6F6F] text-left">
+                            We always complete tasks on time
+                        </h1>
+                    </div>
+                </div>
+
+                {/* Button */}
+                <div className="flex items-center h-[50px] w-full mb-10 md:mb-20">
+                    <button className="border-2 border-[#f15922] text-[#f15922] font-Robot px-6 md:px-15 py-2 mt-6 md:mt-9 hover:text-white hover:bg-[#f15922] cursor-pointer transition-all rounded-3xl">
+                        Read More
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }
