@@ -1,28 +1,32 @@
+import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ourproducts } from "../../Utlis/Productlist";
-import Header from "../../Pages/Navigation/Header";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductBySlug } from "../../features/counter/ProductSlice";
 
 const ProductDetail = () => {
   const { slug } = useParams();
-  const product = ourproducts.find((item) => item.slug === slug);
+  const dispatch = useDispatch();
+  const { singleProduct, loading, error, products } = useSelector((s) => s.products);
+
+  useEffect(() => {
+    const found = products.find((p) => p.slug === slug);
+    if (!found) {
+      dispatch(getProductBySlug(slug));
+    }
+  }, [slug, products, dispatch]);
+
+  const product = products.find((p) => p.slug === slug) || singleProduct;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  if (!product) {
-    return (
-      <div className="text-center py-20 text-gray-500">
-        Product Not Found
-      </div>
-    );
-  }
+  if (loading) return <p className="text-center py-20">Loading product...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
+  if (!product) return <p className="text-center py-20 text-gray-500">Product Not Found</p>;
 
   return (
     <div className="min-h-screen font-Robot">
-      {/* Navbar */}
-      <Header />
-
       {/* Product Section */}
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Product Content */}
@@ -34,14 +38,19 @@ const ProductDetail = () => {
             <span className="absolute left-0 top-12 h-[13px] w-[80px] bg-[#f15922] z-0"></span>
           </div>
 
+          {/* ✅ Short Desc */}
+          {product.shortDesc && (
+            <p className="text-md text-gray-500 italic">{product.shortDesc}</p>
+          )}
+
           {/* Product Detail */}
           <p className="text-lg text-gray-600 leading-relaxed">{product.detail}</p>
 
           {/* Bullet Points */}
           {product.bullets && (
             <ul className="list-disc list-inside space-y-2 text-gray-700">
-              {product.bullets.map((bullet, idx) => (
-                <li key={idx}>{bullet}</li>
+              {product.bullets.split(",").map((bullet, idx) => (
+                <li key={idx}>{bullet.trim()}</li>
               ))}
             </ul>
           )}
@@ -63,9 +72,7 @@ const ProductDetail = () => {
           <h2 className="text-3xl font-semibold text-[#002C8B]">
             Why Choose Our {product.name}?
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            {product.whyChoose}
-          </p>
+          <p className="text-gray-600 max-w-3xl mx-auto">{product.whyChoose}</p>
 
           {/* Explore More Products Button */}
           <Link onClick={scrollToTop} to="/products">

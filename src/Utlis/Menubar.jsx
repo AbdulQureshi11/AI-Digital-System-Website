@@ -9,7 +9,7 @@ export const webmenu = [
     { id: 2, name: 'About', path: '/about' },
     { id: 3, name: 'Services', path: '/services' },
     { id: 4, name: 'Products', path: '/products' },
-    { id: 5, name: 'Contact us', path: '/contactus' }
+    { id: 5, name: 'Contact us', path: '/contactus' },
 ]
 
 //Side bar Pages Links

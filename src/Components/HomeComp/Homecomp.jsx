@@ -12,20 +12,40 @@ import Background from "../Background/Background";
 import ParticlesBg from "../ParticalsComp/ParticalsBg";
 import brainimg from "../../Assets/Pictures/brain_img.svg";
 
+// redux
+import { useDispatch, useSelector } from "react-redux";
+import { getAllHomeSlides } from "../../features/counter/HomeSlice";
+
 const brainDotClasses = [
-  "brain-dot-1", "brain-dot-2", "brain-dot-3", "brain-dot-4",
-  "brain-dot-5", "brain-dot-6", "brain-dot-7", "brain-dot-8",
+  "brain-dot-1",
+  "brain-dot-2",
+  "brain-dot-3",
+  "brain-dot-4",
+  "brain-dot-5",
+  "brain-dot-6",
+  "brain-dot-7",
+  "brain-dot-8",
 ];
 
 const Homecomp = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isIpad, setIsIpad] = useState(false);
 
+  const dispatch = useDispatch();
+  const { slides } = useSelector((state) => state.home);
+
+  useEffect(() => {
+    dispatch(getAllHomeSlides());
+  }, [dispatch]);
+
+
+  const slide = slides?.length > 0 ? slides[0] : null;
+
   useEffect(() => {
     const checkScreenSize = () => {
       const width = window.innerWidth;
-      setIsMobile(width < 768); // mobile <768
-      setIsIpad(width >= 768 && width <= 1024); // iPad range (including iPad Mini, Surface Pro, etc.)
+      setIsMobile(width < 768);
+      setIsIpad(width >= 768 && width <= 1024);
     };
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
@@ -36,7 +56,8 @@ const Homecomp = () => {
     <div className="home-container w-full overflow-x-hidden">
       {/* Hero Section with Background + Particles */}
       <div
-        className={`relative w-full ${isMobile ? "h-[50vh]" : isIpad ? "h-[60vh]" : "h-screen"}`}
+        className={`relative w-full ${isMobile ? "h-[50vh]" : isIpad ? "h-[60vh]" : "h-screen"
+          }`}
       >
         <Background>
           <ParticlesBg id="particles" isMobile={isMobile} />
@@ -63,37 +84,45 @@ const Homecomp = () => {
           {/* Left text */}
           <div className="w-full md:w-[50%] h-full flex flex-col justify-center items-start text-left space-y-2 md:space-y-3">
             <h1 className="text-white font-Robot text-base md:text-[20px]">
-              Helping Business
+              {slide ? slide.title : ""}
             </h1>
             <h1 className="text-[#00CAFF] font-Robot font-bold text-2xl md:text-[40px] leading-tight">
-              Through Technology
+              {slide ? slide.heading : ""}
             </h1>
             <p className="text-white font-Robot text-sm md:text-[16px] max-w-md md:max-w-full pr-2">
-              High-performing software solutions that drive your business forward.
-              Accelerate your software development roadmap through custom engineering solutions.
+              {slide
+                ? slide.description
+                : ""}
             </p>
             <button className="bg-[#00CAFF] text-white font-Robot px-6 md:px-12 py-2 md:py-3 mt-3 hover:bg-[#f15922] transition-all rounded-3xl text-sm md:text-base cursor-pointer">
-              Read More
+              {slide ? slide.buttonText : ""}
             </button>
           </div>
 
-          {/* Brain Image + Dots (hide on mobile, show on iPad + Desktop) */}
+          {/* Brain Image + Dots */}
           <div className="hidden md:flex relative w-full md:w-[540px] mt-16 overflow-hidden z-10 justify-center items-center">
             <img
-              src={brainimg}
+              src={
+                slide?.image
+                  ? `http://localhost:9000/uploads/${slide.image}`
+                  : ''
+              }
               alt="Brain"
-              className={`w-72 ${isIpad ? "mt-6" : "mt-40"} md:w-full max-w-[320px] md:max-w-[480px] lg:max-w-[600px] object-contain`}
+              className={`w-72 ${isIpad ? "mt-6" : "mt-40"
+                } md:w-full max-w-[320px] md:max-w-[480px] lg:max-w-[600px] object-contain`}
             />
             <div className="flex flex-wrap justify-center">
               {brainDotClasses.map((dotClass, index) => (
                 <div key={index}>
                   {/* Base dot */}
                   <span
-                    className={`absolute w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-cyan-500 rounded-full ${dotClass} ${isIpad ? "mt-25" : ""}`}
+                    className={`absolute w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-cyan-500 rounded-full ${dotClass} ${isIpad ? "mt-25" : ""
+                      }`}
                   ></span>
                   {/* Blinking overlay */}
                   <span
-                    className={`absolute w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-cyan-500 rounded-full animate-ping-slow ${dotClass} ${isIpad ? "mt-25" : ""}`}
+                    className={`absolute w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-cyan-500 rounded-full animate-ping-slow ${dotClass} ${isIpad ? "mt-25" : ""
+                      }`}
                   ></span>
                 </div>
               ))}

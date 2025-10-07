@@ -1,12 +1,28 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { ourproducts } from "../../Utlis/Productlist";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../../features/counter/ProductSlice";
 
 const Ourproducts = () => {
+  const dispatch = useDispatch();
+  const { products, loading, error } = useSelector((s) => s.products);
+
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, [dispatch]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  if (loading) return <p className="text-center py-20">Loading products...</p>;
+  if (error) return <p className="text-center py-20 text-red-500">{error}</p>;
+  if (!products || products.length === 0)
+    return <p className="text-center py-20 text-gray-500">No Products Found</p>;
+
+  const orderedProducts = [...products].reverse();
 
   return (
     <div className="bg-white w-full px-6 sm:px-8 md:px-19">
@@ -26,9 +42,14 @@ const Ourproducts = () => {
 
         {/* Mobile View */}
         <div className="block md:hidden">
-          <Swiper spaceBetween={15} slidesPerView={1.15} loop={true} className="mySwiper">
-            {ourproducts.map((item, idx) => (
-              <SwiperSlide key={idx}>
+          <Swiper
+            spaceBetween={15}
+            slidesPerView={1.15}
+            loop={true}
+            className="mySwiper"
+          >
+            {orderedProducts.map((item) => (
+              <SwiperSlide key={item.id}>
                 <ProductCard item={item} scrollToTop={scrollToTop} />
               </SwiperSlide>
             ))}
@@ -37,7 +58,7 @@ const Ourproducts = () => {
 
         {/* Desktop View */}
         <div className="hidden md:grid md:grid-cols-3 gap-8 items-start">
-          {/* Left Column: Heading + Paragraph */}
+          {/* Left Column */}
           <div>
             <div className="relative inline-block mb-6">
               <h1 className="relative z-10 text-[#002C8B] text-[45px] font-black font-RobotB mt-25">
@@ -50,23 +71,22 @@ const Ourproducts = () => {
             </p>
           </div>
 
-          {/* First Two Products */}
-          {ourproducts.slice(0, 2).map((item, idx) => (
-            <ProductCard key={idx} item={item} scrollToTop={scrollToTop} />
+          {/* First Two */}
+          {orderedProducts.slice(0, 2).map((item) => (
+            <ProductCard key={item.id} item={item} scrollToTop={scrollToTop} />
           ))}
         </div>
 
-        {/* Remaining Products in Desktop */}
+        {/* Remaining */}
         <div className="hidden md:grid md:grid-cols-3 gap-8 mt-8">
-          {ourproducts.slice(2).map((item, idx) => (
-            <ProductCard key={idx} item={item} scrollToTop={scrollToTop} />
+          {orderedProducts.slice(2).map((item) => (
+            <ProductCard key={item.id} item={item} scrollToTop={scrollToTop} />
           ))}
         </div>
       </div>
     </div>
   );
 };
-
 
 const ProductCard = ({ item, scrollToTop }) => {
   return (
@@ -89,7 +109,7 @@ const ProductCard = ({ item, scrollToTop }) => {
           onClick={scrollToTop}
           className="mt-4 bg-white cursor-pointer text-orange-500 rounded-xl px-5 md:px-6 py-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-orange-500 hover:text-white"
         >
-          Read More
+          {item.buttonText || "Read More"}
         </NavLink>
       </div>
     </div>
