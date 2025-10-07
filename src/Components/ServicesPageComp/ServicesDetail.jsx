@@ -1,29 +1,33 @@
-import { useParams, Link } from 'react-router-dom';
-import { servicesitems } from '../../Utlis/Serviceslist';
-import Header from '../../Pages/Navigation/Header';
-import QuickLinks from './QuickLinks/QuickLinks';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, Link } from "react-router-dom";
+import { getSingleService } from "../../features/counter/ServiceSlice";
+import QuickLinks from "./QuickLinks/QuickLinks";
 
 const ServicesDetail = () => {
-  const { slug } = useParams(); // dynamic slug
-  const service = servicesitems.find(item => item.slug === slug);
+  const { slug } = useParams();
+  const dispatch = useDispatch();
+  const { singleService, loading, error } = useSelector((s) => s.service);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  useEffect(() => {
+    if (slug) dispatch(getSingleService(slug));
+  }, [dispatch, slug]);
 
-  if (!service) {
-    return <div className="text-center py-20 text-gray-500">Service Not Found</div>;
-  }
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (loading) return <div className="text-center py-20 text-gray-500">Loading...</div>;
+  if (error) return <div className="text-center py-20 text-red-500">{String(error)}</div>;
+  if (!singleService) return <div className="text-center py-20 text-gray-500">Service Not Found</div>;
+
+  const service = singleService;
 
   return (
     <div className="min-h-screen font-Robot text-gray-900">
-      <Header />
-
-      {/* Top Border */}
       <div className="border-t border-gray-300"></div>
 
       {/* Hero Section */}
       <div className="bg-white">
         <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-10 md:items-start text-left">
-
           {/* Text Section */}
           <div className="flex-1 space-y-6 order-1">
             <div className="relative inline-block mb-5">
@@ -41,39 +45,41 @@ const ServicesDetail = () => {
           </div>
 
           {/* Image Section */}
-          <div className="flex-1 flex justify-center order-2 md:order-2">
-            <img
-              src={service.image}
-              alt={service.name}
-              className="w-[340px] md:w-[550px] h-auto rounded-2xl md:rounded-4xl object-contain shadow-lg"
-            />
+          <div className="flex-1 flex justify-center order-2">
+            {service.image && (
+              <img
+                src={service.image}
+                alt={service.name}
+                className="w-[340px] md:w-[550px] h-auto rounded-2xl object-contain shadow-lg"
+              />
+            )}
           </div>
         </div>
 
-        {/* Quick Links (Mobile) */}
-        <div className="w-full order-3 mt-8 md:hidden">
+        {/* Quick Links */}
+        <div className="w-full mt-8 md:hidden">
           <QuickLinks />
         </div>
-
-        {/* Quick Links (Desktop) */}
         <div className="w-full mt-16 hidden md:block">
           <QuickLinks />
         </div>
 
         <hr className="border-t border-gray-300" />
 
-        {/* Why Choose Section (centered) */}
+        {/* Why Choose Section */}
         <div className="bg-gray-100 py-16 px-6 md:px-19">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#002C8B]">
-              {service.head}
-            </h2>
-            <p className="text-gray-700 max-w-3xl mx-auto">
-              {service.whyChoose}
-            </p>
+            {service.head && (
+              <h2 className="text-2xl md:text-3xl font-bold text-[#002C8B]">
+                {service.head}
+              </h2>
+            )}
+            {service.whyChoose && (
+              <p className="text-gray-700 max-w-3xl mx-auto">{service.whyChoose}</p>
+            )}
 
             <Link to="/contactus" onClick={scrollToTop}>
-              <button className="border-2 border-[#f15922] text-[#f15922] font-Robot px-8 md:px-15 py-2 mt-6 md:mt-9 hover:text-white hover:bg-[#f15922] cursor-pointer transition-all rounded-3xl">
+              <button className="border-2 border-[#f15922] text-[#f15922] font-Robot px-8 md:px-15 py-2 mt-6 hover:text-white hover:bg-[#f15922] transition-all rounded-3xl">
                 Contact Us
               </button>
             </Link>

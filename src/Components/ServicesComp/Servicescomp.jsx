@@ -10,10 +10,6 @@ const Servicescomp = () => {
 
   return (
     <div className="font-Robot">
-      {/* Header */}
-      <div>
-        <Header />
-      </div>
 
       {/* Services Section */}
       <div>

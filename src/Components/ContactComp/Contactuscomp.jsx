@@ -4,10 +4,6 @@ import Header from "../../Pages/Navigation/Header";
 const Contactuscomp = () => {
     return (
         <div>
-            {/* Header Background with Particles */}
-            <div>
-                <Header />
-            </div>
 
             {/* Contact Us Section */}
             <div className="max-w-6xl mx-auto md:px-5 px-4 py-12">

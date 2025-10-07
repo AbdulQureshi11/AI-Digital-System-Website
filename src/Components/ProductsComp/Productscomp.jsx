@@ -9,17 +9,11 @@ const Produtcscomp = () => {
 
   return (
     <div>
-      {/* Header Section */}
-      <div>
-        <Header />
-      </div>
-
       {/* Products Section */}
       <div className="py-20">
         <Ourproducts />
       </div>
 
-      {/* Why Choose Us Section (Product-Focused CTA) */}
       <div className="bg-[#F5F4F2] w-full px-6 md:px-19 py-20">
         <div className="max-w-6xl mx-auto">
           {/* Heading + Subtitle */}
