@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../features/counter/ProductSlice";
+import { baseURL } from "../../Utlis/baseUrl";
 
 const Ourproducts = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,13 @@ const Ourproducts = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const getImageUrl = (img) => {
+    if (!img) return "";
+    if (img.startsWith("http")) return img;
+    if (img.includes("uploads")) return `${baseURL}/${img}`;
+    return `${baseURL}/uploads/${img}`;
   };
 
   if (loading) return <p className="text-center py-20">Loading products...</p>;
@@ -30,27 +38,22 @@ const Ourproducts = () => {
         {/* Heading for Mobile Only */}
         <div className="mb-6 block md:hidden">
           <div className="relative inline-block">
-            <h1 className="relative z-10 text-[#002C8B] text-[40px] font-black font-RobotB ">
+            <h1 className="relative z-10 text-[#002C8B] text-[40px] font-black font-RobotB">
               Our Products
             </h1>
             <span className="absolute left-0 bottom-2 h-[12px] w-[120px] bg-[#f15922] z-0"></span>
           </div>
           <p className="text-gray-600 font-Robot leading-relaxed mt-3 text-base">
-            These are the products on our panel and adding more
+            These are the products on our panel and we are adding more.
           </p>
         </div>
 
         {/* Mobile View */}
         <div className="block md:hidden">
-          <Swiper
-            spaceBetween={15}
-            slidesPerView={1.15}
-            loop={true}
-            className="mySwiper"
-          >
+          <Swiper spaceBetween={15} slidesPerView={1.15} loop={true} className="mySwiper">
             {orderedProducts.map((item) => (
               <SwiperSlide key={item.id}>
-                <ProductCard item={item} scrollToTop={scrollToTop} />
+                <ProductCard item={item} scrollToTop={scrollToTop} getImageUrl={getImageUrl} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -67,20 +70,30 @@ const Ourproducts = () => {
               <span className="absolute left-0 bottom-3 h-[13px] w-[150px] bg-[#f15922] z-0"></span>
             </div>
             <p className="text-gray-600 font-Robot leading-relaxed mt-4">
-              These are the products on our panel and adding more
+              These are the products on our panel and we are adding more.
             </p>
           </div>
 
           {/* First Two */}
           {orderedProducts.slice(0, 2).map((item) => (
-            <ProductCard key={item.id} item={item} scrollToTop={scrollToTop} />
+            <ProductCard
+              key={item.id}
+              item={item}
+              scrollToTop={scrollToTop}
+              getImageUrl={getImageUrl}
+            />
           ))}
         </div>
 
         {/* Remaining */}
         <div className="hidden md:grid md:grid-cols-3 gap-8 mt-8">
           {orderedProducts.slice(2).map((item) => (
-            <ProductCard key={item.id} item={item} scrollToTop={scrollToTop} />
+            <ProductCard
+              key={item.id}
+              item={item}
+              scrollToTop={scrollToTop}
+              getImageUrl={getImageUrl}
+            />
           ))}
         </div>
       </div>
@@ -88,11 +101,11 @@ const Ourproducts = () => {
   );
 };
 
-const ProductCard = ({ item, scrollToTop }) => {
+const ProductCard = ({ item, scrollToTop, getImageUrl }) => {
   return (
     <div className="relative group overflow-hidden shadow-lg cursor-pointer w-full">
       <img
-        src={item.image}
+        src={getImageUrl(item.image)}
         alt={item.name}
         className="w-full h-[320px] md:h-[370px] object-cover"
       />

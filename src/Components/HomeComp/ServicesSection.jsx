@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllServices } from "../../features/counter/ServiceSlice";
 import { FaArrowRight } from "react-icons/fa";
+import { baseURL } from "../../Utlis/baseUrl";
 
 const ServicesSection = () => {
   const dispatch = useDispatch();
@@ -14,19 +15,23 @@ const ServicesSection = () => {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
+  const getImageUrl = (img) => {
+    if (!img) return "";
+    if (img.startsWith("http")) return img;
+    if (img.includes("uploads")) return `${baseURL}/${img}`;
+    return `${baseURL}/uploads/${img}`;
+  };
+
   return (
     <div className="bg-[#F5F4F2] w-full px-6 md:px-19 py-12 md:py-20 font-Robot">
       {/* Heading + Text */}
       <div className="flex flex-col md:flex-row md:items-start mb-10 gap-4">
-        {/* Heading */}
         <div className="relative w-full md:w-3/5">
           <h1 className="relative z-10 text-[#002C8B] text-[32px] md:text-[45px] font-RobotB font-black mb-2 md:mb-0">
             Our Services
           </h1>
           <span className="absolute left-0 bottom-4 md:bottom-2 h-[8px] md:h-[13px] w-[80px] md:w-[100px] bg-[#f15922] z-0"></span>
         </div>
-
-        {/* Text */}
         <div className="w-full md:w-2/5 text-[#3a3a3a] text-[15px] md:text-base leading-6 md:leading-7 break-words whitespace-normal">
           <p>
             We fuel the growth of purpose driven brands through strategy
@@ -37,7 +42,7 @@ const ServicesSection = () => {
 
       <hr className="mb-10" />
 
-      {/* Services Grid (4 items per row) */}
+      {/* Services Grid */}
       {loading ? (
         <p className="text-center text-gray-500">Loading services...</p>
       ) : services?.length === 0 ? (
@@ -55,7 +60,7 @@ const ServicesSection = () => {
               <div className="flex items-center gap-4 relative overflow-visible w-full">
                 {item.icon && (
                   <img
-                    src={item.icon}
+                    src={getImageUrl(item.icon)}
                     alt={item.name}
                     className="w-9 h-9 md:w-10 md:h-10 absolute left-0 
                                -translate-x-5 opacity-0 transition-all duration-500 ease-in-out 

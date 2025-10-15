@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllAbouts } from "../../features/counter/AboutSlice";
+import { baseURL } from "../../Utlis/baseUrl";
 
 const Aboutsection = () => {
     const dispatch = useDispatch();
@@ -20,6 +21,14 @@ const Aboutsection = () => {
 
     const about = abouts[0];
 
+    // ✅ Helper function to build full image URL
+    const getImageUrl = (img) => {
+        if (!img) return "";
+        if (img.startsWith("http")) return img;
+        if (img.includes("uploads")) return `${baseURL}/${img}`;
+        return `${baseURL}/uploads/${img}`;
+    };
+
     return (
         <div className="w-full flex flex-col md:flex-row px-4 md:px-19">
             {/* Images Section */}
@@ -27,7 +36,7 @@ const Aboutsection = () => {
                 {/* Image 1 */}
                 {about.topImage1 && (
                     <img
-                        src={about.topImage1}
+                        src={getImageUrl(about.topImage1)}
                         alt="topImage1"
                         className="w-[46%] md:max-w-[46%] h-auto object-contain"
                     />
@@ -37,14 +46,14 @@ const Aboutsection = () => {
                 <div className="relative w-[46%] md:max-w-[46%] mt-50 md:mt-40">
                     {about.topImage2 && (
                         <img
-                            src={about.topImage2}
+                            src={getImageUrl(about.topImage2)}
                             alt="topImage2"
                             className="w-full h-auto object-contain"
                         />
                     )}
                     {about.movingImage && (
                         <img
-                            src={about.movingImage}
+                            src={getImageUrl(about.movingImage)}
                             alt="circle"
                             className="absolute -top-25 -right-0 md:top-[-70px] md:right-[-40px] w-35 h-35 sm:w-26 sm:h-26 md:w-50 md:h-50 animate-spin-slow"
                         />
@@ -72,7 +81,7 @@ const Aboutsection = () => {
                     <div className="w-1/2 h-full flex items-center gap-3 md:gap-7 p-2">
                         {about.bottomImage1 && (
                             <img
-                                src={about.bottomImage1}
+                                src={getImageUrl(about.bottomImage1)}
                                 alt="bottomImage1"
                                 className="w-[28%] md:w-[30%]"
                             />
@@ -84,7 +93,7 @@ const Aboutsection = () => {
                     <div className="w-1/2 h-full flex items-center gap-3 md:gap-7 p-2">
                         {about.bottomImage2 && (
                             <img
-                                src={about.bottomImage2}
+                                src={getImageUrl(about.bottomImage2)}
                                 alt="bottomImage2"
                                 className="w-[28%] md:w-[30%]"
                             />
