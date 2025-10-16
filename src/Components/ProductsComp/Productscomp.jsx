@@ -1,5 +1,4 @@
 import Ourproducts from "../HomeComp/Ourproducts";
-import Header from "../../Pages/Navigation/Header";
 import { Link } from "react-router-dom";
 
 const Produtcscomp = () => {

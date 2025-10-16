@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getAllServices } from "../../features/counter/ServiceSlice";
 import { FaArrowRight } from "react-icons/fa";
-import { baseURL } from "../../Utlis/baseUrl";
+import { getImageUrl } from "../../Utlis/getImageUrl";
 
 const ServicesSection = () => {
   const dispatch = useDispatch();
@@ -14,13 +14,6 @@ const ServicesSection = () => {
   }, [dispatch]);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-  const getImageUrl = (img) => {
-    if (!img) return "";
-    if (img.startsWith("http")) return img;
-    if (img.includes("uploads")) return `${baseURL}/${img}`;
-    return `${baseURL}/uploads/${img}`;
-  };
 
   return (
     <div className="bg-[#F5F4F2] w-full px-6 md:px-19 py-12 md:py-20 font-Robot">
@@ -57,6 +50,7 @@ const ServicesSection = () => {
               className="group relative flex items-center bg-white h-[100px] md:h-[110px] px-5 
                          overflow-hidden transition-all duration-300 hover:bg-blue-800 hover:shadow-lg rounded-md"
             >
+              {/* Icon + Name */}
               <div className="flex items-center gap-4 relative overflow-visible w-full">
                 {item.icon && (
                   <img
@@ -76,6 +70,8 @@ const ServicesSection = () => {
                   {item.name}
                 </span>
               </div>
+
+              {/* Arrow Icon */}
               <span className="absolute top-3 right-3 text-blue-900 transform -rotate-45 
                                transition-all duration-500 ease-out group-hover:rotate-0 group-hover:text-white">
                 <FaArrowRight />

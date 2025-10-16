@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductBySlug } from "../../features/counter/ProductSlice";
+import { getImageUrl } from "../../Utlis/getImageUrl";
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -26,7 +27,7 @@ const ProductDetail = () => {
   if (!product) return <p className="text-center py-20 text-gray-500">Product Not Found</p>;
 
   return (
-    <div className="min-h-screen font-Robot">
+    <div className="min-h-screen font-Robot text-gray-900">
       {/* Product Section */}
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Product Content */}
@@ -38,7 +39,7 @@ const ProductDetail = () => {
             <span className="absolute left-0 top-12 h-[13px] w-[80px] bg-[#f15922] z-0"></span>
           </div>
 
-          {/* ✅ Short Desc */}
+          {/* Short Desc */}
           {product.shortDesc && (
             <p className="text-md text-gray-500 italic">{product.shortDesc}</p>
           )}
@@ -56,13 +57,15 @@ const ProductDetail = () => {
           )}
         </div>
 
-        {/* Product Image */}
-        <div>
-          <img
-            src={product.image}
-            alt={product.name}
-            className="rounded-2xl shadow-lg w-full object-cover"
-          />
+        {/* Fixed Product Image */}
+        <div className="flex justify-center">
+          {product.image && (
+            <img
+              src={getImageUrl(product.image)}
+              alt={product.name}
+              className="rounded-2xl shadow-lg w-full object-contain max-w-[500px]"
+            />
+          )}
         </div>
       </div>
 
@@ -74,7 +77,6 @@ const ProductDetail = () => {
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">{product.whyChoose}</p>
 
-          {/* Explore More Products Button */}
           <Link onClick={scrollToTop} to="/products">
             <button className="border-2 border-[#f15922] text-[#f15922] font-Robot px-15 py-4 mt-9 hover:text-white hover:bg-[#f15922] cursor-pointer transition-all rounded-3xl">
               Explore More Products
