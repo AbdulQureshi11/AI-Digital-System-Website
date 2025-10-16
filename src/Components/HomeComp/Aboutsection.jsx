@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllAbouts } from "../../features/counter/AboutSlice";
-import { baseURL } from "../../Utlis/baseUrl";
+import { getImageUrl } from "../../Utlis/getImageUrl";
 
 const Aboutsection = () => {
     const dispatch = useDispatch();
@@ -11,29 +11,16 @@ const Aboutsection = () => {
         dispatch(getAllAbouts());
     }, [dispatch]);
 
-    if (loading) {
-        return <p className="text-center py-10">Loading...</p>;
-    }
-
-    if (!abouts || abouts.length === 0) {
+    if (loading) return <p className="text-center py-10">Loading...</p>;
+    if (!abouts || abouts.length === 0)
         return <p className="text-center py-10">No About data available</p>;
-    }
 
     const about = abouts[0];
-
-    // ✅ Helper function to build full image URL
-    const getImageUrl = (img) => {
-        if (!img) return "";
-        if (img.startsWith("http")) return img;
-        if (img.includes("uploads")) return `${baseURL}/${img}`;
-        return `${baseURL}/uploads/${img}`;
-    };
 
     return (
         <div className="w-full flex flex-col md:flex-row px-4 md:px-19">
             {/* Images Section */}
             <div className="relative flex md:w-1/2 items-center justify-center gap-3 md:gap-3 mt-[-60px] md:mt-[-200px]">
-                {/* Image 1 */}
                 {about.topImage1 && (
                     <img
                         src={getImageUrl(about.topImage1)}
@@ -41,8 +28,6 @@ const Aboutsection = () => {
                         className="w-[46%] md:max-w-[46%] h-auto object-contain"
                     />
                 )}
-
-                {/* Image 2 with Circle */}
                 <div className="relative w-[46%] md:max-w-[46%] mt-50 md:mt-40">
                     {about.topImage2 && (
                         <img
@@ -63,7 +48,6 @@ const Aboutsection = () => {
 
             {/* Text Section */}
             <div className="w-full md:w-1/2 md:p-5 h-full pt-6 md:pt-20 md:ml-12 flex flex-col items-start">
-                {/* Heading */}
                 <div className="relative mb-5 inline-block text-left">
                     <h1 className="relative z-10 text-[#002C8B] text-[32px] md:text-[45px] font-black font-RobotB">
                         {about.title || "About Us"}
@@ -71,12 +55,11 @@ const Aboutsection = () => {
                     <span className="absolute left-0 bottom-1 md:bottom-3 h-[8px] md:h-[13px] w-[80px] md:w-[100px] bg-[#f15922] z-0"></span>
                 </div>
 
-                {/* Paragraph */}
                 <p className="font-Robot text-[#6F6F6F] text-[15px] md:text-[16px] leading-7 md:leading-8 text-left">
                     {about.description}
                 </p>
 
-                {/* Reward Section */}
+                {/* Bottom Images & Texts */}
                 <div className="flex w-full h-auto mt-5 gap-4 md:gap-0">
                     <div className="w-1/2 h-full flex items-center gap-3 md:gap-7 p-2">
                         {about.bottomImage1 && (
@@ -90,6 +73,7 @@ const Aboutsection = () => {
                             {about.bottomText1}
                         </h1>
                     </div>
+
                     <div className="w-1/2 h-full flex items-center gap-3 md:gap-7 p-2">
                         {about.bottomImage2 && (
                             <img

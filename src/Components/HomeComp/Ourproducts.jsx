@@ -20,8 +20,12 @@ const Ourproducts = () => {
 
   const getImageUrl = (img) => {
     if (!img) return "";
+
+    if (img.startsWith("http://localhost") || img.startsWith("https://localhost")) {
+      return img.replace("localhost", window.location.hostname);
+    }
+
     if (img.startsWith("http")) return img;
-    if (img.includes("uploads")) return `${baseURL}/${img}`;
     return `${baseURL}/uploads/${img}`;
   };
 

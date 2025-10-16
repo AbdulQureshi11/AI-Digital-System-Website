@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { getSingleService } from "../../features/counter/ServiceSlice";
 import QuickLinks from "./QuickLinks/QuickLinks";
+import { getImageUrl } from "../../Utlis/getImageUrl";
+
 
 const ServicesDetail = () => {
   const { slug } = useParams();
@@ -15,9 +17,12 @@ const ServicesDetail = () => {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-  if (loading) return <div className="text-center py-20 text-gray-500">Loading...</div>;
-  if (error) return <div className="text-center py-20 text-red-500">{String(error)}</div>;
-  if (!singleService) return <div className="text-center py-20 text-gray-500">Service Not Found</div>;
+  if (loading)
+    return <div className="text-center py-20 text-gray-500">Loading...</div>;
+  if (error)
+    return <div className="text-center py-20 text-red-500">{String(error)}</div>;
+  if (!singleService)
+    return <div className="text-center py-20 text-gray-500">Service Not Found</div>;
 
   const service = singleService;
 
@@ -48,7 +53,7 @@ const ServicesDetail = () => {
           <div className="flex-1 flex justify-center order-2">
             {service.image && (
               <img
-                src={service.image}
+                src={getImageUrl(service.image)}
                 alt={service.name}
                 className="w-[340px] md:w-[550px] h-auto rounded-2xl object-contain shadow-lg"
               />
@@ -75,7 +80,9 @@ const ServicesDetail = () => {
               </h2>
             )}
             {service.whyChoose && (
-              <p className="text-gray-700 max-w-3xl mx-auto">{service.whyChoose}</p>
+              <p className="text-gray-700 max-w-3xl mx-auto">
+                {service.whyChoose}
+              </p>
             )}
 
             <Link to="/contactus" onClick={scrollToTop}>

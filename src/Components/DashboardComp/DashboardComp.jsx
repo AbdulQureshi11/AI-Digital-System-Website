@@ -17,7 +17,7 @@ const DashboardComp = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/"); // redirect to home
+    navigate("/");
   };
 
   const content = {
